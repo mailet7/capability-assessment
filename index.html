@@ -327,7 +327,7 @@
     <section class="screen" id="screen-9">
       <div class="card">
         <div class="accent">Capability Path</div>
-        <h1>Your Assessment Results</h1>
+        <h1 id="resultsTitle">Your Assessment Results</h1>
         <div id="results"></div>
         <button onclick="restartAssessment()">Retake Assessment</button>
       </div>
@@ -533,6 +533,11 @@
       const edgeData = resultsLibrary[edge];
       const breaksData = resultsLibrary[answers.breaksFirst];
 
+ const displayName = answers.childName || "Your child";
+document.getElementById("resultsTitle").textContent = answers.childName
+  ? answers.childName + "'s Assessment Results"
+  : "Your Assessment Results";
+      
       document.getElementById("results").innerHTML = `
         <div class="result-card">
   <h3>Key Insight</h3>
