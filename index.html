@@ -475,7 +475,24 @@
 
       return lowest.area;
     }
+    function getPrimaryStrength() {
+  const scores = [
+    { area: "Body", score: answers.bodyScore },
+    { area: "Will", score: answers.willScore },
+    { area: "Mind", score: answers.mindScore },
+    { area: "Direction", score: answers.directionScore }
+  ];
 
+  let highest = scores[0];
+
+  for (let i = 1; i < scores.length; i++) {
+    if (scores[i].score >= highest.score) {
+      highest = scores[i];
+    }
+  }
+
+  return highest.area;
+}
     function showResults() {
       if (answers.parentFocus === null) {
         const warning = document.querySelector("#screen-" + currentScreen + " .warning");
