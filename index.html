@@ -3,63 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Capability Path</title>
 
 <style>
-
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f7f1e8;
+  background: #ffffff;
   color: #2f2f2a;
   line-height: 1.6;
 }
 
 .page {
-  max-width: 900px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 22px 18px;
 }
 
-.card {
-  background: #fffaf2;
-  border: 1px solid #e4d8c6;
-  border-radius: 24px;
-  padding: 28px;
-  margin-bottom: 18px;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-.accent {
+.logo {
+  font-weight: bold;
+  color: #9c7a2f;
+  letter-spacing: .04em;
+}
+
+.nav-links a {
+  color: #4a453d;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 15px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 38px;
+  align-items: center;
+  padding: 38px 0 52px;
+}
+
+.kicker {
   color: #9c7a2f;
   text-transform: uppercase;
-  letter-spacing: .06em;
+  letter-spacing: .07em;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 h1 {
-  font-size: 58px;
-  line-height: 1.05;
-  margin: 12px 0 20px;
+  font-size: 56px;
+  line-height: 1.04;
+  margin: 12px 0 18px;
 }
 
 h2 {
   font-size: 34px;
+  line-height: 1.15;
   margin: 0 0 12px;
 }
 
 h3 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin: 0 0 6px;
 }
 
 p {
-  font-size: 19px;
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+.lead {
+  font-size: 21px;
+  color: #4f4a43;
 }
 
 .button {
@@ -69,142 +92,209 @@ p {
   text-decoration: none;
   padding: 14px 24px;
   border-radius: 999px;
-  font-size: 18px;
-  margin-top: 10px;
+  font-size: 17px;
+  margin-top: 8px;
 }
 
-.button:hover {
-  background: #866728;
+.button.secondary {
+  background: transparent;
+  color: #9c7a2f;
+  border: 1px solid #d8cbb8;
+  margin-left: 8px;
 }
 
-.area-grid {
+.visual {
+  background: #fbf7ef;
+  border: 1px solid #eadfce;
+  border-radius: 32px;
+  padding: 28px;
+}
+
+.visual-card {
+  background: white;
+  border: 1px solid #eadfce;
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.section {
+  padding: 46px 0;
+  border-top: 1px solid #eee5d8;
+}
+
+.soft {
+  background: #fbf7ef;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 12px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 14px;
+  margin-top: 22px;
 }
 
 .area {
   background: white;
-  border: 1px solid #e4d8c6;
-  border-radius: 18px;
-  padding: 18px;
+  border: 1px solid #eadfce;
+  border-radius: 22px;
+  padding: 20px;
 }
 
-.area-title {
-  font-size: 18px;
-  font-weight: bold;
+.area strong {
   color: #9c7a2f;
 }
 
-.footer {
-  text-align: center;
-  color: #6a655c;
-  margin-top: 40px;
-  font-size: 14px;
+.story {
+  max-width: 760px;
 }
 
+.footer {
+  padding: 34px 0;
+  color: #6a655c;
+  font-size: 14px;
+  border-top: 1px solid #eee5d8;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 18px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .button.secondary {
+    display: block;
+    margin-left: 0;
+    width: fit-content;
+  }
+}
 </style>
 </head>
 
 <body>
-
 <div class="page">
 
-<div class="card">
+<nav>
+  <div class="logo">CAPABILITY PATH</div>
+  <div class="nav-links">
+    <a href="assessment.html">Assessment</a>
+    <a href="#">How Development Works</a>
+    <a href="#">Resources</a>
+    <a href="#">About</a>
+  </div>
+</nav>
 
-<div class="accent">
-Capability Path
-</div>
+<section class="hero">
+  <div>
+    <div class="kicker">Education for the whole human</div>
+    <h1>Help your child become more capable in real life.</h1>
+    <p class="lead">
+      Capability Path helps you see what is developing, what is getting stuck, and what to build next.
+    </p>
+    <p>
+      Not more pressure. Not more boxes to check. A clearer way to notice what your child needs now.
+    </p>
+    <a class="button" href="assessment.html">Take the Assessment</a>
+    <a class="button secondary" href="#">Learn What Capability Means</a>
+  </div>
 
-<h1>
-Education for the Whole Human
-</h1>
+  <div class="visual">
+    <div class="visual-card">
+      <div class="icon">🌿</div>
+      <h3>Start where life is breaking down.</h3>
+      <p>Routines, emotions, follow-through, learning, or responsibility.</p>
+    </div>
+    <div class="visual-card">
+      <div class="icon">🧭</div>
+      <h3>Find the next developmental edge.</h3>
+      <p>The assessment points to what needs support first.</p>
+    </div>
+    <div class="visual-card">
+      <div class="icon">☀️</div>
+      <h3>Build one layer at a time.</h3>
+      <p>Simple progress, rooted in ordinary daily life.</p>
+    </div>
+  </div>
+</section>
 
-<p>
-Develop the ability to regulate, act, think, and take responsibility.
-</p>
+<section class="section">
+  <div class="story">
+    <div class="kicker">Why Capability Path</div>
+    <h2>Most education focuses on schoolwork. Life asks for more.</h2>
+    <p>
+      Reading and math matter. But children also need to regulate their bodies, start what needs to be started,
+      think clearly, recover from difficulty, and take responsibility.
+    </p>
+    <p>
+      Capability Path gives parents a way to see those foundations clearly, without turning childhood into a test.
+    </p>
+  </div>
+</section>
 
-<p>
-Capability Path helps parents identify what is limiting development and what to build next.
-</p>
+<section class="section">
+  <div class="soft">
+    <div class="kicker">The four developmental areas</div>
+    <h2>Capability grows through the whole child.</h2>
 
-<a class="button" href="assessment.html">
-Take The Assessment
-</a>
+    <div class="grid">
+      <div class="area">
+        <strong>BODY</strong>
+        <h3>Regulate & Care</h3>
+        <p>Routines, recovery, emotions, energy, and self-care.</p>
+      </div>
 
-</div>
+      <div class="area">
+        <strong>WILL</strong>
+        <h3>Act</h3>
+        <p>Starting, staying, returning, and finishing.</p>
+      </div>
 
-<div class="card">
+      <div class="area">
+        <strong>MIND</strong>
+        <h3>Think & Learn</h3>
+        <p>Focus, understanding, problem solving, and learning.</p>
+      </div>
 
-<h2>
-The Four Developmental Areas
-</h2>
+      <div class="area">
+        <strong>DIRECTION</strong>
+        <h3>Self-Direct</h3>
+        <p>Ownership, responsibility, initiative, and wise freedom.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="area-grid">
-
-<div class="area">
-<div class="area-title">BODY</div>
-<p>The Ability To Regulate & Care</p>
-</div>
-
-<div class="area">
-<div class="area-title">WILL</div>
-<p>The Ability To Act</p>
-</div>
-
-<div class="area">
-<div class="area-title">MIND</div>
-<p>The Ability To Think & Learn</p>
-</div>
-
-<div class="area">
-<div class="area-title">DIRECTION</div>
-<p>The Ability To Self-Direct</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>
-Most Education Focuses On Content
-</h2>
-
-<p>
-Capability Path focuses on capability.
-</p>
-
-<p>
-The goal is not simply knowing more.
-The goal is becoming more capable.
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>
-Start With The Assessment
-</h2>
-
-<p>
-Discover your child's current developmental profile, what breaks first under stress, and the next developmental edge.
-</p>
-
-<a class="button" href="assessment.html">
-Begin Assessment
-</a>
-
-</div>
+<section class="section">
+  <div class="story">
+    <div class="kicker">Start here</div>
+    <h2>Take the assessment and find the next thing to build.</h2>
+    <p>
+      In a few minutes, you’ll see your child’s developmental profile, what breaks first under stress,
+      and the current developmental edge.
+    </p>
+    <a class="button" href="assessment.html">Begin Assessment</a>
+  </div>
+</section>
 
 <div class="footer">
-Capability Path
+  Capability Path · Education for the whole human
 </div>
 
 </div>
-
 </body>
 </html>
