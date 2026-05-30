@@ -27,15 +27,12 @@
       padding: 28px;
     }
 
-    h1 {
-      font-size: 34px;
-      line-height: 1.15;
-      margin: 0 0 16px;
+    .screen {
+      display: none;
     }
 
-    p {
-      font-size: 18px;
-      margin: 0;
+    .screen.active {
+      display: block;
     }
 
     .accent {
@@ -46,19 +43,74 @@
       font-size: 14px;
       margin-bottom: 12px;
     }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0 0 20px;
+    }
+
+    button {
+      background: #9c7a2f;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #856726;
+    }
   </style>
 </head>
 
 <body>
   <main class="page">
-    <section class="card">
-      <div class="accent">Capability Path</div>
-      <h1>Assessment</h1>
-      <p>
-        A calm parent observation tool for seeing your child’s current strengths,
-        what may be breaking first, and the next developmental edge.
-      </p>
+
+    <section class="screen active" id="screen-1">
+      <div class="card">
+        <div class="accent">Capability Path</div>
+        <h1>Assessment</h1>
+        <p>
+          A calm parent observation tool for seeing your child’s current strengths,
+          what may be breaking first, and the next developmental edge.
+        </p>
+        <button onclick="nextScreen()">Begin</button>
+      </div>
     </section>
+
+    <section class="screen" id="screen-2">
+      <div class="card">
+        <div class="accent">Area 1 of 4</div>
+        <h2>BODY</h2>
+        <p>Choose the statement that feels most true.</p>
+
+        <button onclick="nextScreen()">Continue</button>
+      </div>
+    </section>
+
   </main>
+
+  <script>
+    let currentScreen = 1;
+
+    function nextScreen() {
+      document.getElementById("screen-" + currentScreen).classList.remove("active");
+      currentScreen = currentScreen + 1;
+      document.getElementById("screen-" + currentScreen).classList.add("active");
+    }
+  </script>
 </body>
 </html>
