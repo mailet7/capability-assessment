@@ -507,6 +507,15 @@
 
       document.getElementById("results").innerHTML = `
         <div class="result-card">
+  <h3>Key Insight</h3>
+
+  <p>
+    Your results suggest that <strong>${edge}</strong> is currently limiting development most.
+    Strengthening this area often makes the other areas easier to develop.
+    Your strongest area is <strong>${strength}</strong>.
+  </p>
+</div>
+        <div class="result-card">
           <h3>Developmental Profile</h3>
           <p><strong>Body:</strong> ${answers.bodyScore}</p>
           <p><strong>Will:</strong> ${answers.willScore}</p>
@@ -517,7 +526,6 @@
 
         <div class="result-card">
           <h3>Primary Strength</h3>
-          <p>Your strongest area right now is:</p>
           <p><strong>${strength}</strong></p>
           <p>This area appears to be supporting development well and can be used as a foundation while strengthening other areas.</p>
         </div>
@@ -546,13 +554,9 @@
           <h3>Final Reminder</h3>
           <p>
 You do not need to improve everything at once.
-<br><br>
 Capability develops one layer at a time.
-<br><br>
 Focus on what is limiting development most right now.
-<br><br>
 Build there first.
-<br><br>
 Everything else becomes easier afterward.
 </p>
         </div>
