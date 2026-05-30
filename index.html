@@ -160,10 +160,26 @@
         <div class="accent">Capability Path</div>
         <h1>Assessment</h1>
         <p>
-          This assessment helps you see where your child is developing, what may be limiting progress, and what to focus on next. 
-          Instead of measuring academic achievement, it measures the foundations of capability needed to function effectively in real life.
+  This assessment helps you see where your child is developing, what may be limiting progress, and what to focus on next.
+</p>
 
-        </p>
+<p><strong>Who are you assessing?</strong></p>
+
+<input
+  type="text"
+  id="childName"
+  placeholder="Child name or nickname (optional)"
+  style="
+    width:100%;
+    padding:12px;
+    border:1px solid #d8cbb8;
+    border-radius:12px;
+    margin-bottom:12px;
+    font-size:16px;
+  "
+>
+
+<button onclick="saveChildNameAndStart()">Begin</button>
         <button onclick="nextScreen()">Begin</button>
       </div>
     </section>
@@ -323,14 +339,17 @@
     let currentScreen = 1;
 
     const answers = {
-      bodyScore: null,
-      willScore: null,
-      mindScore: null,
-      directionScore: null,
-      breaksFirst: null,
-      parentFocus: null,
-      parentResponseStyle: null
-    };
+  childName: "",
+
+  bodyScore: null,
+  willScore: null,
+  mindScore: null,
+  directionScore: null,
+
+  breaksFirst: null,
+  parentFocus: null,
+  parentResponseStyle: null
+};
 
     const levelNames = {
       1: "Dependent",
@@ -438,6 +457,11 @@
       });
     });
 
+    function saveChildNameAndStart() {
+  answers.childName = document.getElementById("childName").value.trim();
+  nextScreen();
+}
+    
     function nextScreen() {
       document.getElementById("screen-" + currentScreen).classList.remove("active");
       currentScreen++;
