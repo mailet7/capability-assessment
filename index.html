@@ -490,10 +490,10 @@
       document.getElementById("results").innerHTML = `
         <div class="result-card">
           <h3>Developmental Profile</h3>
-          <p><strong>Body:</strong> ${answers.bodyScore} — ${levelNames[answers.bodyScore]}</p>
-          <p><strong>Will:</strong> ${answers.willScore} — ${levelNames[answers.willScore]}</p>
-          <p><strong>Mind:</strong> ${answers.mindScore} — ${levelNames[answers.mindScore]}</p>
-          <p><strong>Direction:</strong> ${answers.directionScore} — ${levelNames[answers.directionScore]}</p>
+          <p><strong>Body:</strong> ${answers.bodyScore}</p>
+          <p><strong>Will:</strong> ${answers.willScore}</p>
+          <p><strong>Mind:</strong> ${answers.mindScore}</p>
+          <p><strong>Direction:</strong> ${answers.directionScore}</p>
           <p>1 = Dependent · 2 = Unstable · 3 = Emerging · 4 = Independent · 5 = Resilient</p>
         </div>
 
@@ -515,21 +515,6 @@
           <ul>
             ${edgeData.examples.map(example => `<li>${example}</li>`).join("")}
           </ul>
-        </div>
-
-        <div class="result-card">
-          <h3>Focus This Week</h3>
-          <p>${edgeData.week}</p>
-        </div>
-
-        <div class="result-card">
-          <h3>Parent Focus</h3>
-          <p>${answers.parentFocus}</p>
-        </div>
-
-        <div class="result-card">
-          <h3>Parent Response Style</h3>
-          <p>${answers.parentResponseStyle}</p>
         </div>
 
         <div class="result-card">
