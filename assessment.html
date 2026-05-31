@@ -719,7 +719,24 @@ function showResults() {
 
   nextScreen();
 }
-    function restartAssessment() {
+    function submitNextSteps(event) {
+  const form = document.getElementById("nextStepsForm");
+
+  if (!currentEdge || !mailerLiteForms[currentEdge]) {
+    alert("Something went wrong. Please refresh and try again.");
+    return false;
+  }
+
+  form.action = mailerLiteForms[currentEdge];
+
+  setTimeout(() => {
+    document.getElementById("nextStepsSuccess").style.display = "block";
+    form.style.display = "none";
+  }, 700);
+
+  return true;
+}
+      function restartAssessment() {
       location.reload();
     }
   </script>
