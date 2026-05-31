@@ -6,22 +6,40 @@
   <title>Capability Path Assessment</title>
 
   <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;650&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #082b4c;
+  --sage: #6f7f4f;
+  --gold: #b8872d;
+  --terracotta: #b85f3f;
+  --blue: #7fa9b4;
+  --cream: #fbf7ef;
+  --paper: #fffdf8;
+  --ink: #243028;
+  --muted: #68736b;
+  --line: #e8dfd2;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: hotpink;
-  color: #2f2f2a;
+  font-family: Inter, Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(127, 169, 180, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(184, 135, 45, 0.10), transparent 30%),
+    #ffffff;
+  color: var(--ink);
   line-height: 1.6;
 }
 
 .page {
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 12px 10px;
+  padding: 34px 18px;
 }
 
 .screen {
@@ -33,137 +51,200 @@ body {
 }
 
 .card {
-  background: #fffaf2;
-  border: 1px solid #e4d8c6;
-  border-radius: 18px;
-  padding: 16px;
-  margin-bottom: 12px;
+  background: rgba(255, 253, 248, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 30px;
+  margin-bottom: 18px;
+  box-shadow: 0 18px 50px rgba(8, 43, 76, 0.06);
 }
 
 .accent {
-  color: #9c7a2f;
-  font-weight: bold;
-  letter-spacing: 0.04em;
+  color: var(--sage);
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Fraunces, Georgia, serif;
+  color: var(--navy);
+  font-weight: 650;
 }
 
 h1 {
-  font-size: 28px;
-  line-height: 1.1;
-  margin: 0 0 6px;
+  font-size: clamp(38px, 7vw, 58px);
+  line-height: 1.02;
+  margin: 0 0 14px;
 }
 
 h2 {
-  font-size: 30px;
-  margin: 0 0 6px;
+  font-size: clamp(34px, 6vw, 48px);
+  line-height: 1.05;
+  margin: 0 0 8px;
 }
 
 h3 {
-  font-size: 17px;
-  margin: 0 0 3px;
+  font-size: 22px;
+  margin: 0 0 6px;
 }
 
 p {
-  font-size: 15.5px;
-  margin: 0 0 4px;
+  font-size: 17px;
+  margin: 0 0 10px;
 }
 
 .subtitle {
   font-size: 18px;
-  color: #5f5b52;
-  margin-bottom: 24px;
+  color: var(--muted);
+  margin-bottom: 22px;
 }
 
 .answer-card {
   background: white;
-  border: 1px solid #e4d8c6;
-  border-radius: 14px;
-  padding: 12px 14px;
-  margin-bottom: 8px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 15px 16px;
+  margin-bottom: 11px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.18s ease;
 }
 
 .answer-card:hover {
-  border-color: #9c7a2f;
+  border-color: var(--sage);
+  transform: translateY(-1px);
 }
 
 .answer-card.selected {
-  border-color: #9c7a2f;
-  background: #f8f2e3;
-  box-shadow: 0 0 0 2px rgba(156, 122, 47, 0.15);
+  border-color: var(--gold);
+  background: #fff8e8;
+  box-shadow: 0 0 0 2px rgba(184, 135, 45, 0.16);
 }
 
 .statement {
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 700;
+  color: var(--navy);
   margin-bottom: 3px;
 }
 
 .description {
   font-size: 14.5px;
-  color: #5f5b52;
-  line-height: 1.35;
+  color: var(--muted);
+  line-height: 1.38;
 }
 
 button {
-  background: #9c7a2f;
+  background: var(--navy);
   color: white;
   border: none;
-  border-radius: 999px;
-  padding: 14px 24px;
-  font-size: 17px;
+  border-radius: 8px;
+  padding: 14px 22px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 button:hover {
-  background: #856726;
+  background: #061f39;
 }
 
 .back-button {
-  background: transparent;
-  color: #5f5b52;
-  border: 1px solid #d8cbb8;
+  background: white;
+  color: var(--navy);
+  border: 1px solid var(--line);
   margin-right: 8px;
+}
+
+.back-button:hover {
+  background: var(--cream);
 }
 
 .result-card {
   background: white;
-  border: 1px solid #e4d8c6;
-  border-radius: 12px;
-  padding: 8px 10px;
-  margin-bottom: 6px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.result-card h3 {
+  font-size: 20px;
 }
 
 ul {
-  margin-top: 2px;
+  margin-top: 6px;
   margin-bottom: 0;
-  padding-left: 16px;
+  padding-left: 20px;
 }
 
 li {
-  margin-bottom: 1px;
-  font-size: 14px;
-  line-height: 1.25;
+  margin-bottom: 3px;
+  font-size: 15px;
+  line-height: 1.35;
 }
 
 .warning {
-  color: #8a4b2a;
-  font-size: 16px;
+  color: var(--terracotta);
+  font-size: 15px;
+  font-weight: 600;
   margin-top: 12px;
   display: none;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #d8cbb8;
-  border-radius: 12px;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
   margin-bottom: 12px;
   font-size: 16px;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--ink);
+  background: white;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(111, 127, 79, 0.14);
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 18px 12px;
+  }
+
+  .card {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .answer-card {
+    padding: 13px 14px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .back-button {
+    margin-right: 0;
+  }
 }
 </style>
 </head>
