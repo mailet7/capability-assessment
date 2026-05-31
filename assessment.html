@@ -641,83 +641,125 @@ Current assessment considered MVP complete.
 
   return highest.area;
 }
-    function showResults() {
-      if (answers.parentFocus === null) {
-        const warning = document.querySelector("#screen-" + currentScreen + " .warning");
-        warning.style.display = "block";
-        return;
-      }
+    let currentEdge = "";
 
-      const edge = getDevelopmentalEdge();
-      const strength = getPrimaryStrength();
-      const edgeData = resultsLibrary[edge];
-      const breaksData = resultsLibrary[answers.breaksFirst];
+const mailerLiteForms = {
+  Body: "https://assets.mailerlite.com/jsonp/2392564/forms/189018887885423785/subscribe",
+  Will: "https://assets.mailerlite.com/jsonp/2392564/forms/189019941535483288/subscribe",
+  Mind: "https://assets.mailerlite.com/jsonp/2392564/forms/189020072050689524/subscribe",
+  Direction: "https://assets.mailerlite.com/jsonp/2392564/forms/189020110372996401/subscribe"
+};
 
- const displayName = answers.childName || "Your child";
-document.getElementById("resultsTitle").textContent = answers.childName
-  ? answers.childName + "'s Assessment Results"
-  : "Your Assessment Results";
-      
-      document.getElementById("results").innerHTML = `
-        <div class="result-card">
-  <h3>Key Insight</h3>
+function showResults() {
+  if (answers.parentFocus === null) {
+    const warning = document.querySelector("#screen-" + currentScreen + " .warning");
+    warning.style.display = "block";
+    return;
+  }
 
-  <p>
-    Your results suggest that <strong>${edge}</strong> is currently limiting development most.
-    Strengthening this area often makes the other areas easier to develop.
-    Your strongest area is <strong>${strength}</strong>.
-  </p>
-</div>
-        <div class="result-card">
-          <h3>Developmental Profile</h3>
-          <p><strong>Body:</strong> ${answers.bodyScore}</p>
-          <p><strong>Will:</strong> ${answers.willScore}</p>
-          <p><strong>Mind:</strong> ${answers.mindScore}</p>
-          <p><strong>Direction:</strong> ${answers.directionScore}</p>
-          <p>1 = Dependent · 2 = Unstable · 3 = Emerging · 4 = Independent · 5 = Resilient</p>
-        </div>
+  const edge = getDevelopmentalEdge();
+  const strength = getPrimaryStrength();
 
-        <div class="result-card">
-          <h3>Primary Strength</h3>
-          <p><strong>${strength}</strong></p>
-          <p>This area appears to be supporting development well and can be used as a foundation while strengthening other areas.</p>
-        </div>
-        
-        <div class="result-card">
-          <h3>What Breaks First</h3>
-          <p><strong>${answers.breaksFirst}</strong></p>
-          <p>${breaksData.breaks}</p>
-        </div>
+  currentEdge = edge;
 
-        <div class="result-card">
-          <h3>Current Developmental Edge</h3>
-          <p><strong>${edge}</strong></p>
-          <p>${edgeData.edge}</p>
-        </div>
-    
-        <div class="result-card">
-          <h3>What To Build Next</h3>
-          <p>${edgeData.build}</p>
-          <ul>
-            ${edgeData.examples.map(example => `<li>${example}</li>`).join("")}
-          </ul>
-        </div>
+  document.getElementById("resultsTitle").textContent = answers.childName
+    ? answers.childName + "'s Assessment Overview"
+    : "Your Assessment Overview";
 
-        <div class="result-card">
-          <h3>Final Reminder</h3>
-          <p>
-You do not need to improve everything at once.
-Capability develops one layer at a time.
-Focus on what is limiting development most right now.
-Build there first.
-Everything else becomes easier afterward.
-</p>
-        </div>
-      `;
+  document.getElementById("results").innerHTML = `
+    <div class="result-card">
+      <h3>Overview</h3>
+      <p>
+        Your results suggest that <strong>${edge}</strong> is the area that needs support most right now.
+      </p>
+      <p>
+        Your strongest area is <strong>${strength}</strong>.
+      </p>
+      <p>
+        This is not a label. It is a starting point for clearer support.
+      </p>
+    </div>
 
-      nextScreen();
-    }
+    <div class="result-card">
+      <h3>Developmental Profile</h3>
+      <p><strong>Body:</strong> ${answers.bodyScore}</p>
+      <p><strong>Will:</strong> ${answers.willScore}</p>
+      <p><strong>Mind:</strong> ${answers.mindScore}</p>
+      <p><strong>Direction:</strong> ${answers.directionScore}</p>
+      <p>1 = Dependent · 2 = Unstable · 3 = Emerging · 4 = Independent · 5 = Resilient</p>
+    </div>
 
+    <div class="result-card">
+      <h3>Get Your Personalized Next Steps</h3>
+      <p>
+        Receive practical guidance for supporting <strong>${edge}</strong>,
+        the area most likely to create growth right now.
+      </p>
+
+      <iframe name="hiddenMailerLiteFrame" style="display:none;"></iframe>
+
+      <form
+        id="nextStepsForm"
+        method="post"
+        target="hiddenMailerLiteFrame"
+        onsubmit="return submitNextSteps(event)"
+      >
+        <input
+          type="email"
+          name="fields[email]"
+          placeholder="Email address"
+          required
+        >
+
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+
+        <button type="submit">Get My Next Steps</button>
+      </form>
+
+      <p id="nextStepsSuccess" style="display:none; margin-top:10px;">
+        Thank you. Your next steps are on the way.
+      </p>
+
+      <p style="font-size:14px; margin-top:10px;">
+        Designed to bring clarity, not labels.
+      </p>
+    </div>
+
+    <div class="result-card">
+      <h3>Final Reminder</h3>
+      <p>
+        You do not need to improve everything at once.
+        Focus on what needs support next.
+        Build there first.
+      </p>
+    </div>
+  `;
+
+  nextScreen();
+}
+
+function submitNextSteps(event) {
+  const form = document.getElementById("nextStepsForm");
+
+  if (!currentEdge || !mailerLiteForms[currentEdge]) {
+    alert("Something went wrong. Please refresh and try again.");
+    return false;
+  }
+
+  form.action = mailerLiteForms[currentEdge];
+
+  setTimeout(() => {
+    document.getElementById("nextStepsSuccess").style.display = "block";
+    form.style.display = "none";
+  }, 700);
+
+  return true;
+}
+
+function restartAssessment() {
+  location.reload();
+}
     function restartAssessment() {
       location.reload();
     }
