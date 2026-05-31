@@ -676,24 +676,14 @@ function showResults() {
         Your strongest area is <strong>${strength}</strong>.
       </p>
       <p>
-        This is not a label. It is a starting point for clearer support.
+        This result helps identify where support will have the greatest impact right now.
       </p>
-    </div>
-
-    <div class="result-card">
-      <h3>Developmental Profile</h3>
-      <p><strong>Body:</strong> ${answers.bodyScore}</p>
-      <p><strong>Will:</strong> ${answers.willScore}</p>
-      <p><strong>Mind:</strong> ${answers.mindScore}</p>
-      <p><strong>Direction:</strong> ${answers.directionScore}</p>
-      <p>1 = Dependent · 2 = Unstable · 3 = Emerging · 4 = Independent · 5 = Resilient</p>
     </div>
 
     <div class="result-card">
       <h3>Get Your Personalized Next Steps</h3>
       <p>
-        Receive practical guidance for supporting <strong>${edge}</strong>,
-        the area most likely to create growth right now.
+        Receive practical guidance for supporting <strong>${edge}</strong>, the area most likely to create growth right now.
       </p>
 
       <iframe name="hiddenMailerLiteFrame" style="display:none;"></iframe>
@@ -718,47 +708,16 @@ function showResults() {
       </form>
 
       <p id="nextStepsSuccess" style="display:none; margin-top:10px;">
-        Thank you. Your next steps are on the way.
+        Thank you. Your personalized next steps are on the way.
       </p>
 
       <p style="font-size:14px; margin-top:10px;">
-        Designed to bring clarity, not labels.
-      </p>
-    </div>
-
-    <div class="result-card">
-      <h3>Final Reminder</h3>
-      <p>
-        You do not need to improve everything at once.
-        Focus on what needs support next.
-        Build there first.
+        Your personalized next steps will be delivered immediately.
       </p>
     </div>
   `;
 
   nextScreen();
-}
-
-function submitNextSteps(event) {
-  const form = document.getElementById("nextStepsForm");
-
-  if (!currentEdge || !mailerLiteForms[currentEdge]) {
-    alert("Something went wrong. Please refresh and try again.");
-    return false;
-  }
-
-  form.action = mailerLiteForms[currentEdge];
-
-  setTimeout(() => {
-    document.getElementById("nextStepsSuccess").style.display = "block";
-    form.style.display = "none";
-  }, 700);
-
-  return true;
-}
-
-function restartAssessment() {
-  location.reload();
 }
     function restartAssessment() {
       location.reload();
