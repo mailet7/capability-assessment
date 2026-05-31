@@ -1,186 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Capability Path</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #082b4c;
+  --sage: #6f7f4f;
+  --gold: #b8872d;
+  --terracotta: #b85f3f;
+  --blue: #7fa9b4;
+  --cream: #fbf7ef;
+  --ink: #243028;
+  --soft-line: #e7ddcf;
+}
+
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #ffffff;
-  color: #2f2f2a;
-  line-height: 1.6;
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.65;
 }
+
+img { max-width: 100%; }
 
 .page {
-  max-width: 1040px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 22px 18px;
+  padding: 24px;
 }
 
-nav {
+header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  justify-content: space-between;
+  padding: 12px 0 54px;
 }
 
 .logo {
-  font-weight: bold;
-  color: #9c7a2f;
-  letter-spacing: .04em;
+  width: 230px;
 }
 
-.nav-links a {
-  color: #4a453d;
+nav a {
+  color: var(--navy);
   text-decoration: none;
-  margin-left: 18px;
-  font-size: 15px;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 38px;
-  align-items: center;
-  padding: 38px 0 52px;
-}
-
-.kicker {
-  color: #9c7a2f;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  font-weight: bold;
-  font-size: 13px;
-}
-
-h1 {
-  font-size: 56px;
-  line-height: 1.04;
-  margin: 12px 0 18px;
-}
-
-h2 {
-  font-size: 34px;
-  line-height: 1.15;
-  margin: 0 0 12px;
-}
-
-h3 {
-  font-size: 20px;
-  margin: 0 0 6px;
-}
-
-p {
-  font-size: 18px;
-  margin: 0 0 16px;
-}
-
-.lead {
-  font-size: 21px;
-  color: #4f4a43;
+  margin-left: 24px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .button {
   display: inline-block;
-  background: #9c7a2f;
+  background: var(--navy);
   color: white;
+  padding: 13px 22px;
+  border-radius: 6px;
   text-decoration: none;
-  padding: 14px 24px;
-  border-radius: 999px;
-  font-size: 17px;
-  margin-top: 8px;
+  font-weight: 700;
+  font-size: 14px;
 }
 
-.button.secondary {
-  background: transparent;
-  color: #9c7a2f;
-  border: 1px solid #d8cbb8;
-  margin-left: 8px;
+.button:hover { background: #061f39; }
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid var(--soft-line);
 }
 
-.visual {
-  background: #fbf7ef;
-  border: 1px solid #eadfce;
-  border-radius: 32px;
-  padding: 28px;
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  border-top: none;
+  padding-top: 10px;
 }
 
-.visual-card {
-  background: white;
-  border: 1px solid #eadfce;
-  border-radius: 24px;
-  padding: 20px;
+.kicker {
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 12px;
+  font-weight: 700;
   margin-bottom: 14px;
 }
 
-.icon {
-  font-size: 28px;
-  margin-bottom: 6px;
+h1, h2, h3 {
+  font-family: Fraunces, Georgia, serif;
+  color: var(--navy);
+  font-weight: 650;
 }
 
-.section {
-  padding: 46px 0;
-  border-top: 1px solid #eee5d8;
+h1 {
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: .98;
+  margin: 0 0 24px;
+  max-width: 590px;
 }
 
-.soft {
-  background: #fbf7ef;
-  border-radius: 30px;
-  padding: 30px;
+h2 {
+  font-size: clamp(34px, 4.8vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 28px;
 }
 
-.grid {
+h3 {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+p {
+  font-size: 18px;
+  margin: 0 0 18px;
+  max-width: 720px;
+}
+
+.lead {
+  font-size: 22px;
+  color: #394339;
+}
+
+.gold-line {
+  width: 72px;
+  height: 3px;
+  background: var(--gold);
+  margin: 22px 0;
+}
+
+.hero-art {
+  min-height: 430px;
+  position: relative;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 72% 24%, rgba(127,169,180,.22), transparent 28%),
+    radial-gradient(circle at 28% 70%, rgba(184,95,63,.12), transparent 26%),
+    radial-gradient(circle at 55% 58%, rgba(184,135,45,.16), transparent 28%),
+    var(--cream);
+  overflow: hidden;
+}
+
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 40px;
+  border: 2px solid rgba(8,43,76,.18);
+  border-radius: 38px;
+}
+
+.field-note {
+  position: absolute;
+  right: 38px;
+  top: 44px;
+  width: 220px;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 27px;
+  color: var(--sage);
+  line-height: 1.18;
+}
+
+.watercolor-path {
+  position: absolute;
+  left: 60px;
+  bottom: 62px;
+  width: 76%;
+  height: 120px;
+  border-bottom: 5px solid rgba(111,127,79,.45);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+
+.plant {
+  position: absolute;
+  left: 110px;
+  bottom: 88px;
+  width: 170px;
+  height: 220px;
+}
+
+.plant span {
+  position: absolute;
+  display: block;
+  background: rgba(111,127,79,.8);
+}
+
+.stem {
+  width: 4px;
+  height: 190px;
+  left: 82px;
+  bottom: 0;
+  transform: rotate(18deg);
+}
+
+.leaf {
+  width: 58px;
+  height: 28px;
+  border-radius: 60% 0 60% 0;
+}
+
+.leaf.one { left: 85px; bottom: 122px; transform: rotate(-16deg); }
+.leaf.two { left: 38px; bottom: 92px; transform: rotate(145deg); }
+.leaf.three { left: 95px; bottom: 64px; transform: rotate(-12deg); }
+
+.two-col {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
-  gap: 14px;
-  margin-top: 22px;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.note-card {
+  background: var(--cream);
+  border: 1px solid var(--soft-line);
+  border-radius: 26px;
+  padding: 42px;
+  position: relative;
+}
+
+.note-card::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(184,135,45,.2), transparent 58%);
+  border-radius: 50%;
+}
+
+.story-lines p {
+  margin-bottom: 10px;
+}
+
+.capability-story {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.capability-story p {
+  font-size: 20px;
+}
+
+.short-line {
+  margin: 26px 0;
+}
+
+.areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 45px;
 }
 
 .area {
-  background: white;
-  border: 1px solid #eadfce;
-  border-radius: 22px;
-  padding: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.area-icon {
+  height: 96px;
+  margin: 0 auto 20px;
+}
+
+.area h3 {
+  margin-bottom: 6px;
+}
+
+.area p {
+  font-size: 15px;
+  margin: 0 auto;
 }
 
 .area strong {
-  color: #9c7a2f;
+  display: block;
+  color: var(--gold);
+  letter-spacing: .12em;
+  font-size: 13px;
+  margin-bottom: 6px;
 }
 
-.story {
-  max-width: 760px;
+.soft-section {
+  background: linear-gradient(90deg, rgba(127,169,180,.13), rgba(251,247,239,.9));
+  border-radius: 34px;
+  padding: 56px;
+}
+
+.assessment-box {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.field-paper {
+  background: #fffdf8;
+  border: 1px solid var(--soft-line);
+  border-radius: 22px;
+  padding: 34px;
+  box-shadow: 0 18px 50px rgba(8,43,76,.06);
+}
+
+.field-paper p {
+  font-size: 16px;
+}
+
+.final {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.final p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer {
+  border-top: 1px solid var(--soft-line);
   padding: 34px 0;
-  color: #6a655c;
+  color: #6d7469;
   font-size: 14px;
-  border-top: 1px solid #eee5d8;
+  text-align: center;
 }
 
-@media (max-width: 760px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 18px;
+@media (max-width: 850px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  h1 {
-    font-size: 42px;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
   }
 
-  .nav-links {
-    display: none;
-  }
-
-  .button.secondary {
-    display: block;
+  nav a {
     margin-left: 0;
-    width: fit-content;
+  }
+
+  .hero,
+  .two-col,
+  .assessment-box {
+    grid-template-columns: 1fr;
+  }
+
+  .areas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-art {
+    min-height: 340px;
+  }
+
+  section {
+    padding: 58px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .areas {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 18px;
+  }
+
+  .soft-section {
+    padding: 32px 22px;
+  }
+
+  .field-note {
+    font-size: 22px;
+    width: 180px;
   }
 }
 </style>
@@ -189,110 +388,206 @@ p {
 <body>
 <div class="page">
 
-<nav>
-  <div class="logo">CAPABILITY PATH</div>
-  <div class="nav-links">
-    <a href="assessment.html">Assessment</a>
-    <a href="#">How Development Works</a>
-    <a href="#">Resources</a>
-    <a href="#">About</a>
-  </div>
-</nav>
+<header>
+  <a href="index.html">
+    <img class="logo" src="Logo.png" alt="Capability Path logo">
+  </a>
+
+  <nav>
+    <a href="#why">Why</a>
+    <a href="#capability">Capability</a>
+    <a href="#areas">Four Areas</a>
+    <a href="#assessment">Assessment</a>
+    <a class="button" href="assessment.html">Take Assessment</a>
+  </nav>
+</header>
 
 <section class="hero">
   <div>
-    <div class="kicker">Education for the whole human</div>
-    <h1>Help your child become more capable in real life.</h1>
-    <p class="lead">
-      Capability Path helps you see what is developing, what is getting stuck, and what to build next.
-    </p>
+    <div class="kicker">Education for real life</div>
+    <h1>What if the next step wasn’t more?</h1>
+    <div class="gold-line"></div>
+
+    <p class="lead">Every child is developing.</p>
+    <p>The question is not whether growth is happening.</p>
+    <p>The question is what needs support next.</p>
+
     <p>
-      Not more pressure. Not more boxes to check. A clearer way to notice what your child needs now.
+      Capability Path helps parents identify what is developing, what is getting stuck,
+      and what to build next.
     </p>
-    <a class="button" href="assessment.html">Take the Assessment</a>
-    <a class="button secondary" href="#">Learn What Capability Means</a>
+
+    <a class="button" href="assessment.html">Take The Assessment</a>
   </div>
 
-  <div class="visual">
-    <div class="visual-card">
-      <div class="icon">🌿</div>
-      <h3>Start where life is breaking down.</h3>
-      <p>Routines, emotions, follow-through, learning, or responsibility.</p>
-    </div>
-    <div class="visual-card">
-      <div class="icon">🧭</div>
-      <h3>Find the next developmental edge.</h3>
-      <p>The assessment points to what needs support first.</p>
-    </div>
-    <div class="visual-card">
-      <div class="icon">☀️</div>
-      <h3>Build one layer at a time.</h3>
-      <p>Simple progress, rooted in ordinary daily life.</p>
+  <div class="hero-art">
+    <div class="field-note">Capability starts small. It grows every day.</div>
+    <div class="watercolor-path"></div>
+    <div class="plant">
+      <span class="stem"></span>
+      <span class="leaf one"></span>
+      <span class="leaf two"></span>
+      <span class="leaf three"></span>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="story">
-    <div class="kicker">Why Capability Path</div>
-    <h2>Most education focuses on schoolwork. Life asks for more.</h2>
-    <p>
-      Reading and math matter. But children also need to regulate their bodies, start what needs to be started,
-      think clearly, recover from difficulty, and take responsibility.
-    </p>
-    <p>
-      Capability Path gives parents a way to see those foundations clearly, without turning childhood into a test.
-    </p>
-  </div>
-</section>
+<section id="why">
+  <div class="two-col">
+    <div>
+      <div class="kicker">Why Capability Path Exists</div>
+      <h2>Most education looks different on the surface.</h2>
+      <p>Public school. Private school. Homeschool. Online learning. Alternative education.</p>
+      <p>But underneath, most of it is still built around the same central measure: academics.</p>
+      <p>
+        Capability Path began from the realization that children need more than academic completion.
+        They need to be able to function, act, think, adapt, and take responsibility in real life.
+      </p>
+    </div>
 
-<section class="section">
-  <div class="soft">
-    <div class="kicker">The four developmental areas</div>
-    <h2>Capability grows through the whole child.</h2>
-
-    <div class="grid">
-      <div class="area">
-        <strong>BODY</strong>
-        <h3>Regulate & Care</h3>
-        <p>Routines, recovery, emotions, energy, and self-care.</p>
-      </div>
-
-      <div class="area">
-        <strong>WILL</strong>
-        <h3>Act</h3>
-        <p>Starting, staying, returning, and finishing.</p>
-      </div>
-
-      <div class="area">
-        <strong>MIND</strong>
-        <h3>Think & Learn</h3>
-        <p>Focus, understanding, problem solving, and learning.</p>
-      </div>
-
-      <div class="area">
-        <strong>DIRECTION</strong>
-        <h3>Self-Direct</h3>
-        <p>Ownership, responsibility, initiative, and wise freedom.</p>
-      </div>
+    <div class="note-card">
+      <h3>A different approach.</h3>
+      <p>Understand development.</p>
+      <p>Support what matters most.</p>
+      <p>Build capability one layer at a time.</p>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="story">
-    <div class="kicker">Start here</div>
-    <h2>Take the assessment and find the next thing to build.</h2>
-    <p>
-      In a few minutes, you’ll see your child’s developmental profile, what breaks first under stress,
-      and the current developmental edge.
-    </p>
-    <a class="button" href="assessment.html">Begin Assessment</a>
+<section id="capability">
+  <div class="capability-story">
+    <div class="kicker">What Capability Looks Like</div>
+    <h2>You’ve probably seen both versions.</h2>
+
+    <div class="story-lines">
+      <p>A child forgets their water bottle on the way out the door.</p>
+      <p>One child notices halfway down the road, turns around, and gets it.</p>
+      <p>Another falls apart because someone else didn’t remember for them.</p>
+
+      <p class="short-line">A disagreement happens between friends.</p>
+      <p>For one child, it’s frustrating, but manageable.</p>
+      <p>For another, it becomes the center of their world for days.</p>
+
+      <p class="short-line">A responsibility needs to be done.</p>
+      <p>One child gets started.</p>
+      <p>Another avoids, negotiates, argues, and waits for someone else to take charge.</p>
+
+      <p class="short-line">These moments rarely make it onto report cards.</p>
+      <p>Yet they shape relationships, work, decisions, health, and independence.</p>
+      <p><strong>This is what we mean by capability.</strong></p>
+    </div>
   </div>
+</section>
+
+<section id="areas">
+  <div class="kicker">The Four Areas of Development</div>
+  <h2>One simple lens for seeing the whole child.</h2>
+
+  <p>
+    Capability Path organizes development into four core areas.
+    Together, they help us move beyond isolated skills and see the larger abilities that support a child’s growth.
+  </p>
+
+  <div class="areas">
+    <div class="area">
+      <svg class="area-icon" viewBox="0 0 100 100">
+        <ellipse cx="50" cy="72" rx="30" ry="10" fill="#b8aa8e"/>
+        <ellipse cx="50" cy="56" rx="23" ry="9" fill="#d1c4a8"/>
+        <ellipse cx="50" cy="42" rx="16" ry="8" fill="#8f9a76"/>
+      </svg>
+      <strong>BODY</strong>
+      <h3>Regulate & Care</h3>
+      <p>The ability to care for yourself and your environment.</p>
+    </div>
+
+    <div class="area">
+      <svg class="area-icon" viewBox="0 0 100 100">
+        <path d="M50 12 C25 40 34 76 50 86 C70 72 77 45 50 12Z" fill="#d78b3d"/>
+        <path d="M50 32 C38 50 42 70 51 78 C62 64 64 48 50 32Z" fill="#f2c36b"/>
+      </svg>
+      <strong>WILL</strong>
+      <h3>Act</h3>
+      <p>The ability to start, stay, return, and finish.</p>
+    </div>
+
+    <div class="area">
+      <svg class="area-icon" viewBox="0 0 100 100">
+        <rect x="47" y="42" width="7" height="38" fill="#7f6f4a"/>
+        <circle cx="50" cy="34" r="24" fill="#8fa36b"/>
+        <circle cx="35" cy="44" r="16" fill="#6f7f4f"/>
+        <circle cx="64" cy="44" r="16" fill="#9caf7c"/>
+      </svg>
+      <strong>MIND</strong>
+      <h3>Think & Learn</h3>
+      <p>The ability to understand, solve, adapt, and learn.</p>
+    </div>
+
+    <div class="area">
+      <svg class="area-icon" viewBox="0 0 100 100">
+        <path d="M22 78 C42 38 58 38 78 18" stroke="#082b4c" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <circle cx="78" cy="18" r="8" fill="#b8872d"/>
+        <circle cx="22" cy="78" r="8" fill="#6f7f4f"/>
+      </svg>
+      <strong>DIRECTION</strong>
+      <h3>Take Responsibility</h3>
+      <p>The ability to take ownership and direct your life.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="soft-section">
+    <div class="kicker">Where Academics Fit</div>
+    <h2>Academics matter. They just don’t sit at the center.</h2>
+    <p>Reading matters. Writing matters. Mathematics matters. Knowledge matters.</p>
+    <p>
+      Capability Path does not remove academics. It places them inside a larger purpose:
+      the development of a capable human being.
+    </p>
+    <p>
+      A child learns through Mind. They persist through Will. They manage frustration through Body.
+      They grow in independence through Direction.
+    </p>
+  </div>
+</section>
+
+<section id="assessment">
+  <div class="assessment-box">
+    <div>
+      <div class="kicker">The Power of the Assessment</div>
+      <h2>The assessment is not designed to label children.</h2>
+      <p>It’s designed to bring clarity.</p>
+      <p>Parents are naturally aware of their children’s needs.</p>
+      <p>The assessment gives meaning to those observations.</p>
+      <p>
+        It identifies the area of development that will unlock the greatest growth for your child right now.
+      </p>
+      <p>
+        As a parent, you move from managing the child to leading their development.
+      </p>
+    </div>
+
+    <div class="field-paper">
+      <h3>Before you begin</h3>
+      <p>Think about the child as a whole.</p>
+      <p>Do not answer only from the good days.</p>
+      <p>Difficult moments often reveal where development needs support most.</p>
+      <a class="button" href="assessment.html">Take The Assessment</a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="kicker">Start Here</div>
+  <h2>Every child is developing.</h2>
+  <p>The question is not whether growth is happening.</p>
+  <p>The question is what needs support next.</p>
+  <p>The assessment will help you find it.</p>
+  <a class="button" href="assessment.html">Begin Assessment</a>
 </section>
 
 <div class="footer">
-  Capability Path · Education for the whole human
+  Capability Path · Education For Real Life
 </div>
 
 </div>
