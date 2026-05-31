@@ -1,25 +1,413 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #5c6d3e; -webkit-text-stroke: #5c6d3e}
-    p.p3 {margin: 0.0px 0.0px 6.0px 0.0px; font: 15.5px 'Helvetica Neue'; color: #1b241e; -webkit-text-stroke: #1b241e}
-    p.p4 {margin: 0.0px 0.0px 6.0px 0.0px; font: 15.5px 'Helvetica Neue'; color: #0a1f3b; -webkit-text-stroke: #0a1f3b}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #0a1f3b}
-    span.s1 {font-kerning: none; background-color: #fffdf6}
-    span.s2 {font-kerning: none}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1">CAPABILITY PATH</span></p>
-<h1 style="margin: 0.0px 0.0px 10.0px 0.0px; font: 34.0px 'Helvetica Neue'; color: #0a1f3b; -webkit-text-stroke: #0a1f3b"><span class="s1">Assessment</span></h1>
-<p class="p3"><span class="s1">This assessment helps you see where your child is developing, what may be limiting progress, and what to focus on next.</span></p>
-<p class="p4"><span class="s1">Who are you assessing?</span></p>
-<p class="p5"><span class="s2">Begin</span></p>
-</body>
-</html>
+<section class="screen active" id="screen-1">
+  <div class="card">
+    <div class="accent">Capability Path</div>
+    <h1>Assessment</h1>
+    <p>
+
+This assessment helps you see where your child is developing, what may be limiting progress, and what to focus on next.
+
+<inputtype="text"id="childName"placeholder="Child name or nickname (optional)"style="width:100%;padding:12px;border:1px solid #d8cbb8;border-radius:12px;margin-bottom:12px;font-size:16px;"
+
+
+
+Begin
+
+  </div>
+</section>
+
+<section class="screen" id="screen-2">
+  <div class="card">
+    <div class="accent">Area 1 of 4</div>
+    <h2>BODY</h2>
+    <p class="subtitle">The Ability To Regulate & Care</p>
+    <p>Choose the statement that feels most true.</p>
+
+    <div class="answers" data-key="bodyScore">
+      <div class="answer-card" data-value="1"><div class="statement">1. Everything depends on me.</div><div class="description">I regularly help my child manage emotions, routines, recovery, self-care, or daily functioning.</div></div>
+      <div class="answer-card" data-value="2"><div class="statement">2. Small problems become big problems.</div><div class="description">Emotions, routines, energy, or self-care break down easily and often require support.</div></div>
+      <div class="answer-card" data-value="3"><div class="statement">3. Some days are great. Some days are not.</div><div class="description">My child can manage themselves independently at times, but it is not yet reliable.</div></div>
+      <div class="answer-card" data-value="4"><div class="statement">4. Most days go pretty smoothly.</div><div class="description">My child generally manages routines, emotions, transitions, and self-care without much help.</div></div>
+      <div class="answer-card" data-value="5"><div class="statement">5. They bounce back quickly.</div><div class="description">Challenges happen, but my child adapts, recovers, and stays relatively steady.</div></div>
+    </div>
+    <p class="warning">Please choose one answer before continuing.</p>
+    <button class="back-button" onclick="previousScreen()">Back</button>
+    <button onclick="nextScreenRequired('bodyScore')">Continue</button>
+  </div>
+</section>
+
+<section class="screen" id="screen-3">
+  <div class="card">
+    <div class="accent">Area 2 of 4</div>
+    <h2>WILL</h2>
+    <p class="subtitle">The Ability To Act</p>
+    <p>Choose the statement that feels most true.</p>
+
+    <div class="answers" data-key="willScore">
+      <div class="answer-card" data-value="1"><div class="statement">1. Nothing gets started without me.</div><div class="description">I regularly help my child begin, continue, or complete tasks and responsibilities.</div></div>
+      <div class="answer-card" data-value="2"><div class="statement">2. They stop as soon as things get hard.</div><div class="description">Resistance, delay, quitting, or avoidance happen frequently when effort is required.</div></div>
+      <div class="answer-card" data-value="3"><div class="statement">3. I know they can do it, but it isn't consistent yet.</div><div class="description">My child sometimes follows through independently but still needs reminders or encouragement.</div></div>
+      <div class="answer-card" data-value="4"><div class="statement">4. I can usually trust it will get done.</div><div class="description">My child generally starts, stays with, and finishes responsibilities without prompting.</div></div>
+      <div class="answer-card" data-value="5"><div class="statement">5. They follow through even when they don't feel like it.</div><div class="description">My child stays with tasks even when they are difficult, boring, or frustrating.</div></div>
+    </div>
+
+    <p class="warning">Please choose one answer before continuing.</p>
+    <button class="back-button" onclick="previousScreen()">Back</button>
+    <button onclick="nextScreenRequired('willScore')">Continue</button>
+  </div>
+</section>
+
+<section class="screen" id="screen-4">
+  <div class="card">
+    <div class="accent">Area 3 of 4</div>
+    <h2>MIND</h2>
+    <p class="subtitle">The Ability To Think & Learn</p>
+    <p>Choose the statement that feels most true.</p>
+
+    <div class="answers" data-key="mindScore">
+      <div class="answer-card" data-value="1"><div class="statement">1. Learning takes a lot of support.</div><div class="description">I regularly help my child focus, understand, think through problems, or stay engaged.</div></div>
+      <div class="answer-card" data-value="2"><div class="statement">2. Thinking becomes frustrating quickly.</div><div class="description">My child becomes overwhelmed, distracted, or mentally overloaded when challenged.</div></div>
+      <div class="answer-card" data-value="3"><div class="statement">3. Sometimes they can do it alone. Sometimes they can't.</div><div class="description">Thinking and learning are developing but still depend on support and structure.</div></div>
+      <div class="answer-card" data-value="4"><div class="statement">4. They usually figure things out.</div><div class="description">My child learns, solves problems, and thinks independently in familiar situations.</div></div>
+      <div class="answer-card" data-value="5"><div class="statement">5. They adapt when things are unfamiliar.</div><div class="description">My child learns, thinks, and solves problems effectively in new situations.</div></div>
+    </div>
+
+    <p class="warning">Please choose one answer before continuing.</p>
+    <button class="back-button" onclick="previousScreen()">Back</button>
+    <button onclick="nextScreenRequired('mindScore')">Continue</button>
+  </div>
+</section>
+
+<section class="screen" id="screen-5">
+  <div class="card">
+    <div class="accent">Area 4 of 4</div>
+    <h2>DIRECTION</h2>
+    <p class="subtitle">The Ability To Self-Direct</p>
+    <p>Choose the statement that feels most true.</p>
+
+    <div class="answers" data-key="directionScore">
+      <div class="answer-card" data-value="1"><div class="statement">1. They wait for me to tell them.</div><div class="description">I regularly help my child make decisions, take responsibility, or use freedom wisely.</div></div>
+      <div class="answer-card" data-value="2"><div class="statement">2. Responsibility creates conflict.</div><div class="description">Avoidance, blame, pushback, or dependence appear frequently when responsibility is expected.</div></div>
+      <div class="answer-card" data-value="3"><div class="statement">3. Ownership is starting to show up.</div><div class="description">My child sometimes acts responsibly and independently but still needs reminders and supervision.</div></div>
+      <div class="answer-card" data-value="4"><div class="statement">4. They usually handle what belongs to them.</div><div class="description">My child takes responsibility and manages daily expectations without supervision.</div></div>
+      <div class="answer-card" data-value="5"><div class="statement">5. They do the right thing even when nobody is watching.</div><div class="description">My child consistently shows ownership, initiative, and self-direction.</div></div>
+    </div>
+
+    <p class="warning">Please choose one answer before continuing.</p>
+    <button class="back-button" onclick="previousScreen()">Back</button>
+    <button onclick="nextScreenRequired('directionScore')">Continue</button>
+  </div>
+</section>
+
+<section class="screen" id="screen-6">
+  <div class="card">
+    <div class="accent">Observation</div>
+    <h2>When the day starts going poorly, what is usually the first sign?</h2>
+    <p>Choose the statement that feels most true.</p>
+
+    <div class="answers" data-key="breaksFirst">
+      <div class="answer-card" data-value="Body"><div class="statement">Small things become big reactions.</div></div>
+      <div class="answer-card" data-value="Will"><div class="statement">Things stop getting done.</div></div>
+      <div class="answer-card" data-value="Mind"><div class="statement">Learning becomes harder.</div></div>
+      <div class="answer-card" data-value="Direction"><div class="statement">Responsibility disappears.</div></div>
+    </div>
+
+    <p class="warning">Please choose one answer before continuing.</p>
+    <button class="back-button" onclick="previousScreen()">Back</button>
+    <button onclick="nextScreenRequired('breaksFirst')">Continue</button>
+  </div>
+</section>
+
+<section class="screen" id="screen-7">
+  <div class="card">
+    <div class="accent">Parent Pattern</div>
+    <h2>When your child is struggling, what is your first instinct?</h2>
+
+    <div class="answers" data-key="parentResponseStyle">
+      <div class="answer-card" data-value="Teach more"><div class="statement">Teach more.</div><div class="description">Maybe they don't understand yet.</div></div>
+      <div class="answer-card" data-value="Push more"><div class="statement">Push more.</div><div class="description">Maybe they need firmer expectations.</div></div>
+      <div class="answer-card" data-value="Remind more"><div class="statement">Remind more.</div><div class="description">Maybe they forgot or got distracted.</div></div>
+      <div class="answer-card" data-value="Help more"><div class="statement">Help more.</div><div class="description">Maybe they aren't ready yet.</div></div>
+      <div class="answer-card" data-value="Observe more"><div class="statement">Observe more.</div><div class="description">Maybe something deeper is limiting development.</div></div>
+    </div>
+
+    <p class="warning">Please choose one answer before continuing.</p>
+    <button class="back-button" onclick="previousScreen()">Back</button>
+    <button onclick="nextScreenRequired('parentResponseStyle')">Continue</button>
+  </div>
+</section>
+
+<section class="screen" id="screen-8">
+  <div class="card">
+    <div class="accent">Parent Focus</div>
+    <h2>What feels most important to fix right now?</h2>
+
+    <div class="answers" data-key="parentFocus">
+      <div class="answer-card" data-value="School feels harder than it should."><div class="statement">School feels harder than it should.</div></div>
+      <div class="answer-card" data-value="Our days feel chaotic."><div class="statement">Our days feel chaotic.</div></div>
+      <div class="answer-card" data-value="Nothing gets finished."><div class="statement">Nothing gets finished.</div></div>
+      <div class="answer-card" data-value="I have to remind my child constantly."><div class="statement">I have to remind my child constantly.</div></div>
+      <div class="answer-card" data-value="My child depends on me too much."><div class="statement">My child depends on me too much.</div></div>
+    </div>
+
+    <p class="warning">Please choose one answer before seeing results.</p>
+    <button class="back-button" onclick="previousScreen()">Back</button>
+    <button onclick="showResults()">See Results</button>
+  </div>
+</section>
+
+<section class="screen" id="screen-9">
+  <div class="card">
+    <div class="accent">Capability Path</div>
+    <h1 id="resultsTitle">Your Assessment Results</h1>
+    <div id="results"></div>
+    <button onclick="restartAssessment()">Retake Assessment</button>
+  </div>
+</section>
+
+<script>
+
+/*
+
+CAPABILITY PATH ASSESSMENTVERSION 1.0 (FROZEN)
+
+Future Improvements:
+
+Use child name inside Key Insight
+
+adjust recomendations for level 5 results
+
+Email capture after results
+
+MailerLite integration
+
+Learn More button for Developmental Edge
+
+Progress indicator
+
+Layer identification (Stabilize / Build Capability / Release Responsibility)
+
+Printable PDF report
+
+Personalized Body / Will / Mind / Direction guides
+
+*/
+
+let currentScreen = 1;
+
+const answers = {
+
+childName: "",
+
+bodyScore: null,willScore: null,mindScore: null,directionScore: null,
+
+breaksFirst: null,parentFocus: null,parentResponseStyle: null};
+
+const levelNames = {
+  1: "Dependent",
+  2: "Unstable",
+  3: "Emerging",
+  4: "Independent",
+  5: "Resilient"
+};
+
+const resultsLibrary = {
+  Body: {
+    edge: "Regulation and stability are currently limiting development most. When the body becomes more stable, learning, follow-through, and responsibility become easier.",
+    build: "Focus on helping your child consistently care for and regulate their body.",
+    examples: [
+      "Consistent wake times",
+      "Consistent meal times",
+      "Consistent bedtimes",
+      "Getting dressed independently",
+      "Brushing teeth and caring for hygiene",
+      "Drinking water throughout the day",
+      "Accessing snacks independently",
+      "Quiet time and recovery periods",
+      "Movement and physical activity",
+      "Recognizing hunger, tiredness, and overwhelm"
+    ],
+    week: "Choose one body routine and practice it consistently.",
+    breaks: "When life becomes difficult, regulation is usually the first area to lose stability. Pay attention to routines, emotions, recovery, and body care."
+  },
+  Will: {
+    edge: "Follow-through is currently limiting development most. Your child may know what to do but struggle to consistently act on it.",
+    build: "Focus on helping your child start, stay with, return to, and finish responsibilities.",
+    examples: [
+      "Completing chores",
+      "Cleaning up after activities",
+      "Finishing what they start",
+      "Returning to unfinished work",
+      "Following through on commitments",
+      "Completing daily responsibilities",
+      "Practicing effort when tasks are difficult",
+      "Working through boredom",
+      "Staying with a task for longer periods",
+      "Taking action without negotiation"
+    ],
+    week: "Choose one responsibility. Start. Stay. Finish. Every day.",
+    breaks: "When life becomes difficult, follow-through is usually the first area to lose stability. Tasks become harder to start, continue, or finish."
+  },
+  Mind: {
+    edge: "Thinking and learning are currently limiting development most. The goal is not more information. The goal is stronger thinking.",
+    build: "Focus on helping your child think, reason, learn, and solve problems more independently.",
+    examples: [
+      "Reading independently",
+      "Solving problems before asking for help",
+      "Explaining their thinking",
+      "Working through mistakes",
+      "Completing focused learning blocks",
+      "Following multi-step directions",
+      "Asking thoughtful questions",
+      "Using books and resources independently",
+      "Planning simple projects",
+      "Learning new skills"
+    ],
+    week: "Complete one short focused learning block daily. Keep it successful.",
+    breaks: "When life becomes difficult, thinking and learning are usually the first areas to lose stability. Focus, problem solving, and learning often become more difficult."
+  },
+  Direction: {
+    edge: "Responsibility and self-direction are currently limiting development most. Your child needs more opportunities to carry ownership.",
+    build: "Focus on helping your child take responsibility for themselves, their environment, and their choices.",
+    examples: [
+      "Independent Time",
+      "Managing personal belongings",
+      "Completing responsibilities without reminders",
+      "Contributing to the home",
+      "Noticing what needs to be done",
+      "Making decisions independently",
+      "Managing free time well",
+      "Following routines without supervision",
+      "Taking ownership of mistakes",
+      "Helping others voluntarily"
+    ],
+    week: "Practice Independent Time every day. Create opportunities for ownership without constant management.",
+    breaks: "When life becomes difficult, responsibility and ownership are usually the first areas to lose stability. Independence decreases and more external management becomes necessary."
+  }
+};
+
+document.querySelectorAll(".answer-card").forEach(card => {
+  card.addEventListener("click", function () {
+    const group = this.parentElement;
+    const key = group.dataset.key;
+    const value = this.dataset.value;
+
+    group.querySelectorAll(".answer-card").forEach(item => {
+      item.classList.remove("selected");
+    });
+
+    this.classList.add("selected");
+
+    if (key.includes("Score")) {
+      answers[key] = Number(value);
+    } else {
+      answers[key] = value;
+    }
+
+    const warning = this.closest(".card").querySelector(".warning");
+    if (warning) warning.style.display = "none";
+  });
+});
+
+function saveChildNameAndStart() {
+
+answers.childName = document.getElementById("childName").value.trim();nextScreen();}
+
+function nextScreen() {
+  document.getElementById("screen-" + currentScreen).classList.remove("active");
+  currentScreen++;
+  document.getElementById("screen-" + currentScreen).classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function previousScreen() {
+  document.getElementById("screen-" + currentScreen).classList.remove("active");
+  currentScreen--;
+  document.getElementById("screen-" + currentScreen).classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function nextScreenRequired(key) {
+  if (answers[key] === null) {
+    const warning = document.querySelector("#screen-" + currentScreen + " .warning");
+    warning.style.display = "block";
+    return;
+  }
+  nextScreen();
+}
+
+function getDevelopmentalEdge() {
+  const scores = [
+    { area: "Body", score: answers.bodyScore },
+    { area: "Will", score: answers.willScore },
+    { area: "Mind", score: answers.mindScore },
+    { area: "Direction", score: answers.directionScore }
+  ];
+
+  let lowest = scores[0];
+
+  for (let i = 1; i < scores.length; i++) {
+    if (scores[i].score < lowest.score) {
+      lowest = scores[i];
+    }
+  }
+
+  return lowest.area;
+}
+function getPrimaryStrength() {
+
+const scores = [{ area: "Body", score: answers.bodyScore },{ area: "Will", score: answers.willScore },{ area: "Mind", score: answers.mindScore },{ area: "Direction", score: answers.directionScore }];
+
+let highest = scores[0];
+
+for (let i = 1; i < scores.length; i++) {if (scores[i].score >= highest.score) {highest = scores[i];}}
+
+return highest.area;}function showResults() {if (answers.parentFocus === null) {const warning = document.querySelector("#screen-" + currentScreen + " .warning");warning.style.display = "block";return;}
+
+  const edge = getDevelopmentalEdge();
+  const strength = getPrimaryStrength();
+  const edgeData = resultsLibrary[edge];
+  const breaksData = resultsLibrary[answers.breaksFirst];
+
+const displayName = answers.childName || "Your child";document.getElementById("resultsTitle").textContent = answers.childName? answers.childName + "'s Assessment Results": "Your Assessment Results";
+
+  document.getElementById("results").innerHTML = `
+    <div class="result-card">
+
+    <div class="result-card">
+      <h3>Primary Strength</h3>
+      <p><strong>${strength}</strong></p>
+      <p>This area appears to be supporting development well and can be used as a foundation while strengthening other areas.</p>
+    </div>
+    
+    <div class="result-card">
+      <h3>What Breaks First</h3>
+      <p><strong>${answers.breaksFirst}</strong></p>
+      <p>${breaksData.breaks}</p>
+    </div>
+
+    <div class="result-card">
+      <h3>Current Developmental Edge</h3>
+      <p><strong>${edge}</strong></p>
+      <p>${edgeData.edge}</p>
+    </div>
+
+    <div class="result-card">
+      <h3>What To Build Next</h3>
+      <p>${edgeData.build}</p>
+      <ul>
+        ${edgeData.examples.map(example => `<li>${example}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="result-card">
+      <h3>Final Reminder</h3>
+      <p>
+
+You do not need to improve everything at once.Capability develops one layer at a time.Focus on what is limiting development most right now.Build there first.Everything else becomes easier afterward.
+
+  nextScreen();
+}
+
+function restartAssessment() {
+  location.reload();
+}
