@@ -2,21 +2,45 @@
 
 ## Purpose
 
-This file serves as the content brain for the Capability Path website.
+This file serves as the master content brain for Capability Path.
 
-It contains article ideas, future pages, resources, FAQs, content priorities, and publishing plans.
+It contains:
+
+- Journal ideas
+- Future website pages
+- Resources
+- FAQs
+- Research topics
+- Assessment content
+- Book content
+- Future content opportunities
+
+This document should continue growing over time.
 
 ---
 
-# Current Priorities
+# Current Website Priorities
 
-## Website Pages
+## Phase 1
 
 - Journal
 - About
+- Resources
+
+## Phase 2
+
 - How Development Works
 - Developmental Areas
-- Resources
+- Body Page
+- Will Page
+- Mind Page
+- Direction Page
+
+## Phase 3
+
+- Assessment Results Pages
+- Research Library
+- Resource Downloads
 
 ---
 
@@ -26,69 +50,132 @@ It contains article ideas, future pages, resources, FAQs, content priorities, an
 
 - None
 
-## Drafting
+---
 
-- Why Capability Path?
+## Priority Articles
 
-## Future Articles
+### Why Capability Path?
 
-### Capability
+Origin story.
 
-- Children Need Capability, Not More Curriculum
+The fragmentation problem.
+
+Why capability matters.
+
+---
+
+### The Day I Realized My House Was Part Of School
+
+The realization that life and education cannot be separated.
+
+---
+
+### Stop Managing. Start Leading.
+
+The difference between controlling behavior and developing capability.
+
+---
+
+### Children Need Capability, Not More Curriculum
+
+The limits of academic-centered education.
+
+---
+
+### The Fear Of Falling Behind
+
+How comparison creates overwhelm.
+
+---
+
+### What Real Education Looks Like
+
+A broader vision of development.
+
+---
+
+# Capability Articles
+
 - Why Capability Comes Before Academics
-- The Difference Between Ability and Capability
+- The Difference Between Ability And Capability
+- Why Complexity Requires Foundations
+- Capability Versus Performance
 - What Capability Actually Means
-- Why Most Education Feels Fragmented
-- Complexity Through Simplicity
+- The Four Developmental Areas
+- Why Development Is Sequential
+- The Hidden Cost Of Fragmentation
 
-### Body
+---
+
+# Body Articles
 
 - Why Regulation Comes First
-- The Hidden Cost of Ignoring the Body
-- What an Organized Body Looks Like
-- Why Sleep Matters More Than Most Parents Realize
-- Food, Energy, and Learning
+- The Organized Body
+- The Connection Between Energy And Learning
+- Sleep Is A Developmental Tool
+- Food, Energy, And Function
+- The Foundation Most Parents Miss
+- Why Dysregulation Changes Everything
 
-### Will
+---
 
-- Stop Managing. Start Leading.
-- Why Motivation Is Not the Problem
-- Start, Stay, Finish
-- The Difference Between Compliance and Will
+# Will Articles
+
+- Start, Stay, Return, Finish
+- Why Motivation Is Not The Problem
+- The Most Misunderstood Developmental Area
 - When Helping Becomes Hindering
-- Why Some Children Look Like ADHD
+- Why Some Children Appear Unmotivated
+- Will Is Not Discipline
+- The Cost Of Rescuing
 
-### Mind
+---
+
+# Mind Articles
 
 - Thinking Versus Memorizing
-- Why Struggle Is Necessary
-- The Problem With Constant Help
-- What Independent Learning Looks Like
+- The Value Of Struggle
 - Learning How To Learn
+- Independent Thinking
+- Curiosity And Capability
+- Problem Solving As Development
+- Why Immediate Answers Can Be Harmful
 
-### Direction
+---
 
-- Responsibility Creates Confidence
-- Why Chores Matter
+# Direction Articles
+
+- Responsibility Builds Confidence
 - The Path To Self-Leadership
-- How Ownership Develops
-- Raising Contributors Instead of Consumers
+- Ownership Changes Everything
+- Initiative Cannot Be Forced
+- Contribution Creates Meaning
+- Why Chores Matter
+- Raising Contributors
 
-### Homeschool
+---
 
-- The Day I Realized My House Was Part of School
-- Why I Stopped Comparing My Children To School
-- The Fear Of Falling Behind
-- What Real Education Looks Like
-- When Curriculum Becomes The Goal
+# Parenting Articles
 
-### Parenting
-
-- Why Children Resist
-- The Difference Between Leading and Managing
-- The Power Of Small Responsibilities
 - Why Parents Burn Out
-- Building A Family Culture
+- The Management Trap
+- The Hidden Cost Of Doing Everything
+- Small Responsibilities Matter
+- Why Children Resist
+- The Long Game Of Development
+- Progress Over Perfection
+
+---
+
+# Homeschool Articles
+
+- Why I Stopped Comparing My Children To School
+- The Problem With Keeping Up
+- When Curriculum Becomes The Goal
+- Why Homeschooling Felt So Hard
+- What Happens When Life Counts As Education
+- Free Time Versus Independent Time
+- The Myth Of Educational Productivity
 
 ---
 
@@ -96,20 +183,22 @@ It contains article ideas, future pages, resources, FAQs, content priorities, an
 
 ## Priority
 
-- Journal
 - About
+- Resources
 - How Development Works
 - Developmental Areas
-- Resources
+
+---
 
 ## Future
 
 - Capability Road Map
-- Assessment Guide
 - Research Foundation
 - FAQ
-- Parent Quick Start Guide
+- Getting Started
+- Parent Guide
 - Recommended Reading
+- Assessment Guide
 
 ---
 
@@ -120,79 +209,122 @@ It contains article ideas, future pages, resources, FAQs, content priorities, an
 - Capability Road Map
 - Rapid Assessment
 - Daily Sheet
-- Layer 1 Quick Start
 - Parent Guide
+- Quick Start Guide
+- Layer 1 Guide
+- Independent Time Guide
 - Developmental Areas Guide
+
+---
+
+# Assessment Content
+
+## Current
+
+Rapid Assessment
+
+---
+
+## Future
+
+Assessment Results Pages
+
+### Body
+
+Level-specific guidance
+
+### Will
+
+Level-specific guidance
+
+### Mind
+
+Level-specific guidance
+
+### Direction
+
+Level-specific guidance
 
 ---
 
 # Frequently Asked Questions
 
-## Future FAQ Topics
-
 - What is Capability Path?
 - Is Capability Path a curriculum?
+- What ages is it for?
 - Can I use this with public school?
 - Can I use this with homeschool?
-- What age is this for?
+- Can I use this with private school?
 - What if my child has ADHD?
 - What if my child has autism?
 - What if my child resists everything?
 - Where should I start?
+- How long does development take?
 
 ---
 
 # Research Topics
 
-## Future Research Pages
+## Development
 
+- Neurodevelopment
 - Executive Function
 - Self-Regulation
 - Motivation
 - Responsibility
-- Neurodevelopment
-- Learning Science
+- Independence
 - Habit Formation
 - Resilience
-- Independence
 
 ---
 
-# SEO Topics
+## Education
 
-## High Priority
+- Learning Science
+- Memory
+- Attention
+- Problem Solving
+- Skill Development
+- Academic Learning
 
-- Homeschool burnout
-- Child responsibility
-- Self-regulation in children
-- Executive function development
-- Child motivation
-- Homeschool routines
-- Independent learning
-- Raising responsible children
-- Homeschool alternatives
-- Life skills education
+---
+
+# Book Content
+
+## A System For Humans
+
+Core ideas:
+
+- Whole-human development
+- Capability over academics
+- Development over performance
+- Leadership over management
+- Complexity through simplicity
+- Body → Will → Mind → Direction
+
+---
+
+# Future Products
+
+- Capability Road Map
+- Parent Handbook
+- Quick Start Guide
+- Assessment Package
+- Workshops
+- Courses
 
 ---
 
 # Content Rules
 
-## Every Article Should
+Every piece of content should:
 
-- Start with a story, observation, or experience
-- Reveal a deeper principle
-- End with practical application
-- Feel hopeful
-- Reduce overwhelm
 - Increase clarity
-
-## Avoid
-
-- Academic language
-- Corporate language
-- Fear-based messaging
-- Marketing hype
-- Overcomplicated explanations
+- Reduce overwhelm
+- Create hope
+- Lead toward capability
+- Focus on practical reality
+- Support whole-human development
 
 ---
 
@@ -202,8 +334,8 @@ It contains article ideas, future pages, resources, FAQs, content priorities, an
 
 "I feel less overwhelmed."
 
-"I can do this."
-
-"My child makes more sense now."
+"I understand my child better."
 
 "There is a path forward."
+
+"I can do this."
