@@ -353,15 +353,22 @@ p {
   }
 
   .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
     padding-top: 24px;
-  }
-}
-  .areas {
-    grid-template-columns: 1fr 1fr;
   }
 
   .hero-art {
-    min-height: 340px;
+    display: none;
+  }
+
+  h1 {
+    font-size: 64px;
+    line-height: 0.95;
+  }
+
+  .areas {
+    grid-template-columns: 1fr 1fr;
   }
 
   section {
@@ -385,20 +392,6 @@ p {
   .field-note {
     font-size: 22px;
     width: 180px;
-  }
-  @media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-visual {
-    display: none;
-  }
-
-  h1 {
-    font-size: 64px;
-    line-height: 0.95;
   }
 }
 </style>
