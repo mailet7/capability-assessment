@@ -329,29 +329,33 @@ p {
   text-align: center;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 768px) {
   header {
     flex-direction: column;
-    gap: 20px;
+    padding: 18px 0 28px;
+    gap: 18px;
+  }
+
+  .logo img,
+  header img {
+    width: 170px;
   }
 
   nav {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 14px;
+    gap: 18px;
+    font-size: 16px;
+    flex-wrap: wrap;
   }
 
   nav a {
-    margin-left: 0;
+    font-size: 16px;
   }
 
-  .hero,
-  .two-col,
-  .assessment-box {
-    grid-template-columns: 1fr;
+  .hero {
+    padding-top: 24px;
   }
-
+}
   .areas {
     grid-template-columns: 1fr 1fr;
   }
