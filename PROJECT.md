@@ -131,3 +131,32 @@ The Ability To Take Responsibility
 - Navigation should remain simple
 - Every page should provide a path to the Assessment
 - Assessment is the primary call-to-action throughout the site
+
+- ## Website Architecture
+
+Current Website Structure
+
+- Home
+- Why Capability Path
+- Assessment
+- Journal
+- How Development Works
+- Developmental Areas
+  - Body
+  - Will
+  - Mind
+  - Direction
+- Resources
+- About
+
+Journal articles should live in:
+
+/journal/
+
+Each article should have its own URL.
+
+Example:
+
+/journal/the-house-is-part-of-school
+
+Assessment remains the primary call-to-action throughout the website.
