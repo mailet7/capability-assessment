@@ -1,1 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Am I Ruining Their Childhood? | Capability Path Journal</title>
+<meta name="description" content="A reflection on children, responsibility, work, childhood, and what it means to raise capable humans." />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #082b4c;
+  --sage: #6f7f4f;
+  --gold: #b8872d;
+  --terracotta: #b85f3f;
+  --blue: #7fa9b4;
+  --cream: #fbf7ef;
+  --ink: #243028;
+  --soft-line: #e7ddcf;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+img { max-width: 100%; }
+
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 12px;
+}
+
+.logo {
+  width: 150px;
+  display: block;
+}
+
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  padding: 13px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.button:hover { background: #061f39; }
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid var(--soft-line);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  border-top: none;
+  padding-top: 10px;
+}
+
+.kicker {
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+h1, h2, h3 {
+  font-family: Fraunces, Georgia, serif;
+  color: var(--navy);
+  font-weight: 650;
+}
+
+h1 {
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: .98;
+  margin: 0 0 24px;
+  max-width: 590px;
+}
+
+h2 {
+  font-size: clamp(34px, 4.8vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 28px;
+}
+
+h3 {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+p {
+  font-size: 18px;
+  margin: 0 0 18px;
+  max-width: 720px;
+}
+
+.lead {
+  font-size: 20px;
+  opacity: 0.7;
+  color: #394339;
+}
+
+.gold-line {
+  width: 72px;
+  height: 3px;
+  background: var(--gold);
+  margin: 22px 0;
+}
+
+.hero-art {
+  min-height: 430px;
+  position: relative;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 72% 24%, rgba(127,169,180,.22), transparent 28%),
+    radial-gradient(circle at 28% 70%, rgba(184,95,63,.12), transparent 26%),
+    radial-gradient(circle at 55% 58%, rgba(184,135,45,.16), transparent 28%),
+    var(--cream);
+  overflow: hidden;
+}
+
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 40px;
+  border: 2px solid rgba(8,43,76,.18);
+  border-radius: 38px;
+}
+
+.field-note {
+  position: absolute;
+  right: 38px;
+  top: 44px;
+  width: 220px;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 27px;
+  color: var(--sage);
+  line-height: 1.18;
+}
+
+.watercolor-path {
+  position: absolute;
+  left: 60px;
+  bottom: 62px;
+  width: 76%;
+  height: 120px;
+  border-bottom: 5px solid rgba(111,127,79,.45);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+
+.plant {
+  position: absolute;
+  left: 110px;
+  bottom: 88px;
+  width: 170px;
+  height: 220px;
+}
+
+.plant span {
+  position: absolute;
+  display: block;
+  background: rgba(111,127,79,.8);
+}
+
+.stem {
+  width: 4px;
+  height: 190px;
+  left: 82px;
+  bottom: 0;
+  transform: rotate(18deg);
+}
+
+.leaf {
+  width: 58px;
+  height: 28px;
+  border-radius: 60% 0 60% 0;
+}
+
+.leaf.one { left: 85px; bottom: 122px; transform: rotate(-16deg); }
+.leaf.two { left: 38px; bottom: 92px; transform: rotate(145deg); }
+.leaf.three { left: 95px; bottom: 64px; transform: rotate(-12deg); }
+
+.two-col {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.note-card {
+  background: var(--cream);
+  border: 1px solid var(--soft-line);
+  border-radius: 26px;
+  padding: 42px;
+  position: relative;
+}
+
+.note-card::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(184,135,45,.2), transparent 58%);
+  border-radius: 50%;
+}
+
+.story-lines p {
+  margin-bottom: 10px;
+}
+
+.capability-story {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.capability-story p {
+  font-size: 20px;
+}
+
+.short-line {
+  margin: 26px 0;
+}
+
+.areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 45px;
+}
+
+.area {
+  text-align: center;
+  padding: 10px;
+}
+
+.area-icon {
+  height: 96px;
+  margin: 0 auto 20px;
+}
+
+.area h3 {
+  margin-bottom: 6px;
+}
+
+.area p {
+  font-size: 15px;
+  margin: 0 auto;
+}
+
+.area strong {
+  display: block;
+  color: var(--gold);
+  letter-spacing: .12em;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.soft-section {
+  background: linear-gradient(90deg, rgba(127,169,180,.13), rgba(251,247,239,.9));
+  border-radius: 34px;
+  padding: 56px;
+}
+
+.assessment-box {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.field-paper {
+  background: #fffdf8;
+  border: 1px solid var(--soft-line);
+  border-radius: 22px;
+  padding: 34px;
+  box-shadow: 0 18px 50px rgba(8,43,76,.06);
+}
+
+.field-paper p {
+  font-size: 16px;
+}
+
+.final {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.final p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  border-top: 1px solid var(--soft-line);
+  padding: 34px 0;
+  color: #6d7469;
+  font-size: 14px;
+  text-align: center;
+}
+    .journal-article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.journal-article article {
+  margin-top: 42px;
+}
+
+.journal-article article p {
+  font-size: 22px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.back-link,
+.back-link:visited {
+  display: inline-block;
+  margin-bottom: 48px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .journal-article {
+  padding: 48px 0;
+}
+
+.journal-article article p {
+  font-size: 20px;
+}
+  .assessment-box {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+  .field-paper {
+  width: 100%;
+  max-width: 100%;
+}
+  .two-col {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+  .note-card {
+  width: 100%;
+  max-width: 100%;
+}
+  .split,
+.assessment-section,
+.capability-section {
+  grid-template-columns: 1fr;
+}
+
+.soft-card,
+.note-card,
+.assessment-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 52px;
+  line-height: 1;
+}
+  header {
+    flex-direction: column;
+    padding: 18px 0 28px;
+    gap: 18px;
+  }
+
+  .logo img,
+  header img {
+    width: 170px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 18px;
+    font-size: 16px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 24px;
+  }
+
+  .hero-art {
+    display: none;
+  }
+
+  h1 {
+    font-size: 64px;
+    line-height: 0.95;
+  }
+
+  .areas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section {
+    padding: 58px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .areas {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 18px;
+  }
+
+  .soft-section {
+    padding: 32px 22px;
+  }
+
+  .field-note {
+    font-size: 22px;
+    width: 180px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <header>
+    <a href="../index.html" class="logo">
+      <img src="../Logo_Transparent.png" alt="Capability Path">
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../assessment.html">Assessment</a>
+      <a href="../journal.html">Journal</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="journal-article">
+
+    <a class="back-link" href="../journal.html">
+      ← Back to Journal
+    </a>
+
+    <h1>Am I Ruining Their Childhood?</h1>
+
+    <p class="lead">June 6, 2026</p>
+    <article>
+  <p>Some days I walk through my house and all I can see is what needs to be done.</p>
+
+  <p>The fingerprints on the walls.</p>
+
+  <p>The chipped paint.</p>
+
+  <p>The broken drawer.</p>
+
+  <p>The pile that somehow appeared on the counter again.</p>
+
+  <p>The bathroom trim that needs replacing.</p>
+
+  <p>The door that should have been painted two summers ago.</p>
+
+  <p>The project sitting in the garage.</p>
+
+  <p>The project sitting in the basement.</p>
+
+  <p>The project sitting in my head.</p>
+
+  <p>Sometimes it feels like the house is falling apart faster than I can take care of it.</p>
+
+  <p>And the truth is, maybe it is.</p>
+
+  <p>Six people live here.</p>
+
+  <p>Five of them are children.</p>
+
+  <p>Children are wonderful.</p>
+
+  <p>Children are also incredibly hard on houses.</p>
+
+  <p>They leave trails.</p>
+
+  <p>They leave fingerprints.</p>
+
+  <p>They leave shoes in places that make absolutely no sense.</p>
+
+  <p>They use things.</p>
+
+  <p>Touch things.</p>
+
+  <p>Wear things out.</p>
+
+  <p>And somehow, despite cleaning all day, the house can still look like nobody cleaned at all.</p>
+
+  <p>I used to think that if I just worked harder, I would eventually catch up.</p>
+
+  <p>Then one day I realized something.</p>
+
+  <p>Even if I stopped everything else and dedicated myself entirely to house projects, I still couldn't finish the list.</p>
+
+  <p>The list is bigger than me.</p>
+
+  <p>And that realization was strangely freeing.</p>
+
+  <p>Because for years I thought the problem was that I wasn't working hard enough.</p>
+
+  <p>Maybe the problem was that I was trying to do the work of an entire household by myself.</p>
+
+  <p>Lately I've been imagining what happens when my children get older.</p>
+
+  <p>I imagine teenagers instead of little kids.</p>
+
+  <p>I imagine them helping paint a room.</p>
+
+  <p>Repair a fence.</p>
+
+  <p>Pull weeds.</p>
+
+  <p>Clean up after a project.</p>
+
+  <p>Maintain the things they use every day.</p>
+
+  <p>And every time I imagine it, I feel two completely different things.</p>
+
+  <p>One part of me feels relieved.</p>
+
+  <p>The other part feels guilty.</p>
+
+  <p>Because a voice immediately asks:</p>
+
+  <p><em>What about their childhood?</em></p>
+
+  <p>Shouldn't kids be playing?</p>
+
+  <p>Shouldn't kids be having fun?</p>
+
+  <p>Shouldn't Saturdays be for bikes and friends and adventures?</p>
+
+  <p>I don't know.</p>
+
+  <p>Maybe.</p>
+
+  <p>But then I think about my own memories.</p>
+
+  <p>The memories that stayed.</p>
+
+  <p>Not every memory was fun.</p>
+
+  <p>Some of them were work.</p>
+
+  <p>Helping.</p>
+
+  <p>Building.</p>
+
+  <p>Learning.</p>
+
+  <p>Standing next to an adult who trusted me with something real.</p>
+
+  <p>I remember feeling proud.</p>
+
+  <p>I remember feeling capable.</p>
+
+  <p>I remember feeling important.</p>
+
+  <p>Not entertained.</p>
+
+  <p>Important.</p>
+
+  <p>And those are not the same thing.</p>
+
+  <p>Sometimes I wonder if we've accidentally started believing that a good childhood is a childhood with as little responsibility as possible.</p>
+
+  <p>The less expected of a child, the better.</p>
+
+  <p>The fewer obligations, the better.</p>
+
+  <p>The more entertainment, the better.</p>
+
+  <p>But when I look around at the adults I admire most, I don't see people who were protected from responsibility.</p>
+
+  <p>I see people who learned how to carry it.</p>
+
+  <p>Gradually.</p>
+
+  <p>Patiently.</p>
+
+  <p>Over time.</p>
+
+  <p>I don't want my children carrying adult burdens.</p>
+
+  <p>I don't want them worrying about mortgages or budgets or whether the bathroom trim gets replaced this year.</p>
+
+  <p>Those things belong to me.</p>
+
+  <p>But I also don't want them growing up believing that homes take care of themselves.</p>
+
+  <p>I don't want them believing that meals appear by magic.</p>
+
+  <p>That laundry folds itself.</p>
+
+  <p>That someone else always cleans up the mess.</p>
+
+  <p>That somebody, somewhere, will always take responsibility.</p>
+
+  <p>Because one day they will become that somebody.</p>
+
+  <p>Maybe childhood isn't the absence of responsibility.</p>
+
+  <p>Maybe childhood is the place where responsibility is introduced little by little.</p>
+
+  <p>Like learning to ride a bike.</p>
+
+  <p>Not all at once.</p>
+
+  <p>Not before they're ready.</p>
+
+  <p>But not forever postponed either.</p>
+
+  <p>And maybe one day, when that door finally gets painted, it won't just be because I found the time.</p>
+
+  <p>Maybe it will be because there were six people who called this place home.</p>
+
+  <p>And over the years, each one learned how to care for it.</p>
+
+  <p>Maybe that is part of childhood too.</p>
+</article>
+  </section>
+
+</div>
+
+</body>
+</html>
 
