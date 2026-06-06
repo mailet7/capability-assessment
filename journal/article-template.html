@@ -330,8 +330,38 @@ p {
   font-size: 14px;
   text-align: center;
 }
+    .journal-article {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.journal-article article {
+  margin-top: 42px;
+}
+
+.journal-article article p {
+  font-size: 22px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 32px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--navy);
+}
 
 @media (max-width: 768px) {
+  .journal-article {
+  padding: 48px 0;
+}
+
+.journal-article article p {
+  font-size: 20px;
+}
   .assessment-box {
   grid-template-columns: 1fr;
   gap: 32px;
