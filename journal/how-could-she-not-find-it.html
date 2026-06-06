@@ -1,1 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How Could She Not Find It?</title>
+  <meta name="description" content="A reflection on children, attention, searching, information processing, and the hidden skills adults often assume children already have." />
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #082b4c;
+  --sage: #6f7f4f;
+  --gold: #b8872d;
+  --terracotta: #b85f3f;
+  --blue: #7fa9b4;
+  --cream: #fbf7ef;
+  --ink: #243028;
+  --soft-line: #e7ddcf;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+img { max-width: 100%; }
+
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 12px;
+}
+
+.logo {
+  width: 150px;
+  display: block;
+}
+
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  padding: 13px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.button:hover { background: #061f39; }
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid var(--soft-line);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  border-top: none;
+  padding-top: 10px;
+}
+
+.kicker {
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+h1, h2, h3 {
+  font-family: Fraunces, Georgia, serif;
+  color: var(--navy);
+  font-weight: 650;
+}
+
+h1 {
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: .98;
+  margin: 0 0 24px;
+  max-width: 590px;
+}
+
+h2 {
+  font-size: clamp(34px, 4.8vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 28px;
+}
+
+h3 {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+p {
+  font-size: 18px;
+  margin: 0 0 18px;
+  max-width: 720px;
+}
+
+.lead {
+  font-size: 20px;
+  opacity: 0.7;
+  color: #394339;
+}
+
+.gold-line {
+  width: 72px;
+  height: 3px;
+  background: var(--gold);
+  margin: 22px 0;
+}
+
+.hero-art {
+  min-height: 430px;
+  position: relative;
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 72% 24%, rgba(127,169,180,.22), transparent 28%),
+    radial-gradient(circle at 28% 70%, rgba(184,95,63,.12), transparent 26%),
+    radial-gradient(circle at 55% 58%, rgba(184,135,45,.16), transparent 28%),
+    var(--cream);
+  overflow: hidden;
+}
+
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 40px;
+  border: 2px solid rgba(8,43,76,.18);
+  border-radius: 38px;
+}
+
+.field-note {
+  position: absolute;
+  right: 38px;
+  top: 44px;
+  width: 220px;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 27px;
+  color: var(--sage);
+  line-height: 1.18;
+}
+
+.watercolor-path {
+  position: absolute;
+  left: 60px;
+  bottom: 62px;
+  width: 76%;
+  height: 120px;
+  border-bottom: 5px solid rgba(111,127,79,.45);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+
+.plant {
+  position: absolute;
+  left: 110px;
+  bottom: 88px;
+  width: 170px;
+  height: 220px;
+}
+
+.plant span {
+  position: absolute;
+  display: block;
+  background: rgba(111,127,79,.8);
+}
+
+.stem {
+  width: 4px;
+  height: 190px;
+  left: 82px;
+  bottom: 0;
+  transform: rotate(18deg);
+}
+
+.leaf {
+  width: 58px;
+  height: 28px;
+  border-radius: 60% 0 60% 0;
+}
+
+.leaf.one { left: 85px; bottom: 122px; transform: rotate(-16deg); }
+.leaf.two { left: 38px; bottom: 92px; transform: rotate(145deg); }
+.leaf.three { left: 95px; bottom: 64px; transform: rotate(-12deg); }
+
+.two-col {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.note-card {
+  background: var(--cream);
+  border: 1px solid var(--soft-line);
+  border-radius: 26px;
+  padding: 42px;
+  position: relative;
+}
+
+.note-card::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(184,135,45,.2), transparent 58%);
+  border-radius: 50%;
+}
+
+.story-lines p {
+  margin-bottom: 10px;
+}
+
+.capability-story {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.capability-story p {
+  font-size: 20px;
+}
+
+.short-line {
+  margin: 26px 0;
+}
+
+.areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 45px;
+}
+
+.area {
+  text-align: center;
+  padding: 10px;
+}
+
+.area-icon {
+  height: 96px;
+  margin: 0 auto 20px;
+}
+
+.area h3 {
+  margin-bottom: 6px;
+}
+
+.area p {
+  font-size: 15px;
+  margin: 0 auto;
+}
+
+.area strong {
+  display: block;
+  color: var(--gold);
+  letter-spacing: .12em;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.soft-section {
+  background: linear-gradient(90deg, rgba(127,169,180,.13), rgba(251,247,239,.9));
+  border-radius: 34px;
+  padding: 56px;
+}
+
+.assessment-box {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.field-paper {
+  background: #fffdf8;
+  border: 1px solid var(--soft-line);
+  border-radius: 22px;
+  padding: 34px;
+  box-shadow: 0 18px 50px rgba(8,43,76,.06);
+}
+
+.field-paper p {
+  font-size: 16px;
+}
+
+.final {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.final p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  border-top: 1px solid var(--soft-line);
+  padding: 34px 0;
+  color: #6d7469;
+  font-size: 14px;
+  text-align: center;
+}
+    .journal-article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.journal-article article {
+  margin-top: 42px;
+}
+
+.journal-article article p {
+  font-size: 22px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.back-link,
+.back-link:visited {
+  display: inline-block;
+  margin-bottom: 48px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .journal-article {
+  padding: 48px 0;
+}
+
+.journal-article article p {
+  font-size: 20px;
+}
+  .assessment-box {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+  .field-paper {
+  width: 100%;
+  max-width: 100%;
+}
+  .two-col {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+  .note-card {
+  width: 100%;
+  max-width: 100%;
+}
+  .split,
+.assessment-section,
+.capability-section {
+  grid-template-columns: 1fr;
+}
+
+.soft-card,
+.note-card,
+.assessment-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 52px;
+  line-height: 1;
+}
+  header {
+    flex-direction: column;
+    padding: 18px 0 28px;
+    gap: 18px;
+  }
+
+  .logo img,
+  header img {
+    width: 170px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 18px;
+    font-size: 16px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 24px;
+  }
+
+  .hero-art {
+    display: none;
+  }
+
+  h1 {
+    font-size: 64px;
+    line-height: 0.95;
+  }
+
+  .areas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section {
+    padding: 58px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .areas {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 18px;
+  }
+
+  .soft-section {
+    padding: 32px 22px;
+  }
+
+  .field-note {
+    font-size: 22px;
+    width: 180px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <header>
+    <a href="../index.html" class="logo">
+      <img src="../Logo_Transparent.png" alt="Capability Path">
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../assessment.html">Assessment</a>
+      <a href="../journal.html">Journal</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../about.html">About</a>
+    </nav>
+  </header>
+
+  <section class="journal-article">
+
+    <a class="back-link" href="../journal.html">
+      ← Back to Journal
+    </a>
+
+    <h1>How Could She Not Find It?</h1>
+
+    <p class="lead">June 2026</p>
+
+    ```html
+<article>
+
+<p>The other day I asked my daughter to get her violin from the van. She immediately got up and went outside. There was no arguing, no complaining, and no delay. She simply got up and went.</p>
+
+<p>A few moments later she came back empty handed.</p>
+
+<p>"I can't find it."</p>
+
+<p>I felt a little frustrated. I had seen the violin in the van the night before. I was sure it was there.</p>
+
+<p>"Look again," I said. "It's in there."</p>
+
+<p>So she went back.</p>
+
+<p>A few moments later she returned.</p>
+
+<p>Still empty handed.</p>
+
+<p>"I can't find it."</p>
+
+<p>Now I was getting frustrated. I wasn't asking her to solve a difficult math problem. I wasn't asking her to build something. I wasn't asking her to do anything complicated. I was asking her to find a violin in a van. How hard could that be?</p>
+
+<p>"It's there," I said. "Find it."</p>
+
+<p>So she went back a third time.</p>
+
+<p>And a third time she returned without it.</p>
+
+<p>At this point I could not believe it. I genuinely could not comprehend how she wasn't finding it. The task seemed so simple. So obvious. So easy.</p>
+
+<p>Finally, I walked out to the van with her.</p>
+
+<p>Within seconds I found it.</p>
+
+<p>It was sitting underneath her chair. It wasn't hidden. It wasn't buried. It wasn't tucked away behind something else. It was simply underneath the chair.</p>
+
+<p>I pointed to it.</p>
+
+<p>"There it is."</p>
+
+<p>She grabbed it and we walked back inside.</p>
+
+<p>But I couldn't stop thinking about it.</p>
+
+<p>I wasn't angry anymore. I was confused.</p>
+
+<p>How could she not find it?</p>
+
+<p>How could something so obvious to me be completely invisible to her?</p>
+
+<p>For a while I carried that question around. Not just about the violin, but about a hundred other things.</p>
+
+<p>The child who can't find the shoes.</p>
+
+<p>The child who can't find the milk in the refrigerator.</p>
+
+<p>The child who can't find the backpack.</p>
+
+<p>The child who opens the pantry and somehow misses the thing sitting right in front of them.</p>
+
+<p>If you're a parent, you probably know exactly what I'm talking about. It's one of those experiences that can make you feel like you're losing your mind.</p>
+
+<p>Eventually, that frustration became one of the reasons I started building the Capability Assessment. I was trying to make sense of what I was seeing because I kept running into situations where a child appeared capable of something but wasn't actually doing it.</p>
+
+<p>At first, I thought many of these situations were motivation problems.</p>
+
+<p>The child wasn't trying.</p>
+
+<p>The child wasn't paying attention.</p>
+
+<p>The child wasn't putting in effort.</p>
+
+<p>The child didn't care.</p>
+
+<p>That explanation made sense.</p>
+
+<p>Until it didn't.</p>
+
+<p>Because my daughter had gone to the van three times. She had done exactly what I asked. She started immediately. She followed through. She returned to the task. She wasn't refusing. She wasn't avoiding. She wasn't resisting.</p>
+
+<p>In fact, if anything, she showed more persistence than many adults would have.</p>
+
+<p>The more I thought about it, the less it looked like a motivation problem. The problem seemed to be somewhere else.</p>
+
+<p>That's when I started wondering if finding things isn't nearly as simple as adults think it is.</p>
+
+<p>Think about what actually has to happen in order to find a violin in a van.</p>
+
+<p>First, you have to know what you're looking for. Then you have to scan the environment. You have to sort relevant information from irrelevant information. You have to look underneath things, around things, and behind things. You have to hold the goal in your mind while processing what you're seeing. You have to notice details. You have to systematically search instead of randomly looking.</p>
+
+<p>Suddenly, finding a violin doesn't seem quite so simple anymore.</p>
+
+<p>It turns out that looking is not the same thing as searching.</p>
+
+<p>Searching is a skill.</p>
+
+<p>A skill most adults have practiced for decades.</p>
+
+<p>A skill we rarely notice because it has become automatic.</p>
+
+<p>But automatic is not the same thing as natural.</p>
+
+<p>Many children are still learning how to process visual information. They are still learning how to scan an environment, notice details, organize what they see, and locate what they're looking for.</p>
+
+<p>What looked like a lack of effort was actually a missing skill.</p>
+
+<p>At least for now.</p>
+
+<p>What really changed things for me was realizing this wasn't only showing up when she couldn't find her violin.</p>
+
+<p>Once I saw it, I started seeing it everywhere.</p>
+
+<p>The violin wasn't actually the problem. It was a clue.</p>
+
+<p>I noticed the same thing when she couldn't find her shoes. When she couldn't find the milk. When she struggled to follow multi-step instructions. When she became overwhelmed by tasks that seemed simple to me. When she missed details that felt obvious.</p>
+
+<p>For years I had been treating these as separate problems.</p>
+
+<p>One day it was forgetfulness.</p>
+
+<p>Another day it was distraction.</p>
+
+<p>Another day it was not paying attention.</p>
+
+<p>Another day it was carelessness.</p>
+
+<p>Another day it was not listening.</p>
+
+<p>They all looked different on the surface, but underneath I started wondering if they were actually connected.</p>
+
+<p>Not a dozen separate weaknesses.</p>
+
+<p>One developing capability.</p>
+
+<p>The ability to process information.</p>
+
+<p>The ability to observe.</p>
+
+<p>The ability to organize what was being seen and heard.</p>
+
+<p>The ability to take in a situation and determine what matters.</p>
+
+<p>The ability to search.</p>
+
+<p>The ability to think through a problem.</p>
+
+<p>Suddenly I wasn't looking at a dozen unrelated frustrations anymore. I was looking at one developmental area showing up in a dozen different places.</p>
+
+<p>And that changed how I responded.</p>
+
+<p>Because if the problem was a developing ability, then constantly repeating "Pay attention," "Look harder," or "Try again" wasn't actually teaching the missing skill. It was assuming the skill already existed.</p>
+
+<p>What she needed wasn't more pressure.</p>
+
+<p>She needed more support.</p>
+
+<p>She needed help slowing down. Help breaking tasks into pieces. Help learning what to look for. Help learning how to scan an environment. Help learning how to process information that was right in front of her.</p>
+
+<p>In other words, she didn't need me to demand stronger thinking.</p>
+
+<p>She needed opportunities to build it.</p>
+
+<p>These days, when one of my children can't find something that seems obvious to me, I still feel the frustration rise. I still have moments where I want to say, "It's right there."</p>
+
+<p>Sometimes it is.</p>
+
+<p>But now another question shows up too.</p>
+
+<p>What ability am I assuming they already have?</p>
+
+<p>That question has changed far more than the way I think about finding violins.</p>
+
+<p>It has changed the way I think about children.</p>
+
+</article>
+```
+
+
+  </section>
+
+</div>
+
+</body>
+</html>
 
